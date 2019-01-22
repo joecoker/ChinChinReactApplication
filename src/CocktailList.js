@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import CocktailListItem from './CocktailListItem';
 
 class CocktailList extends Component {
 
@@ -8,10 +8,10 @@ class CocktailList extends Component {
 
   render() {
     return (
-      <div>
+      <div className="flex-container">
       {
         this.props.recipes.map(function(cocktail) {
-        return <div>{cocktail.name}</div>
+        return <CocktailListItem cocktail={cocktail} />
       })
       }
       </div>
