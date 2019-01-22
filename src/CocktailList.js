@@ -5,8 +5,6 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 class CocktailList extends Component {
 
 
-
-
   render() {
     return (
       <div className="flex-container">

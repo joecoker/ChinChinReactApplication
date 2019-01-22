@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './css/App.css';
 import CocktailList from './CocktailList';
+import CocktailDetails from './CocktailDetails';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 let recipes = require('./recipes.json');
 
@@ -17,11 +17,11 @@ class App extends Component {
   cocktail({match}) {
     return (
       <div className="App">
-        {match.params.name}
+        <CocktailDetails name={match.params.name} />
       </div>
     )
   }
-  
+
   render() {
     return (
       <Router>
