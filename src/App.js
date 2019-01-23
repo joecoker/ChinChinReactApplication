@@ -1,34 +1,19 @@
 import React, { Component } from 'react';
-import './css/App.css';
-import CocktailList from './CocktailList';
-import CocktailDetails from './CocktailDetails';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-let recipes = require('./recipes.json');
+// eslint-disable-next-line
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+
+import Home from './home'
+import Cocktail from './cocktail'
 
 class App extends Component {
-  home() {
-    return (
-      <div className="App">
-      <CocktailList recipes={recipes}/>
-      </div>
-    )
-  }
-
-  cocktail({match}) {
-    return (
-      <div className="App">
-        <CocktailDetails name={match.params.name} />
-      </div>
-    )
-  }
 
   render() {
     return (
       <Router>
-       <div>
-         <Route exact path="/" component={this.home} />
-         <Route path="/cocktail/:name" component={this.cocktail} />
-       </div>
+        <div>
+          <Route exact path="/" component={Home.go} />
+          <Route path="/cocktail/:name" component={Cocktail.go} />
+        </div>
       </Router>
     );
   }
