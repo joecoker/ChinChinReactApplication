@@ -11,7 +11,7 @@ body {
   width: 200px;
 }
 
-a { 
+.name, .base {
   color: black;
 }
 
@@ -20,9 +20,13 @@ a:link {
 }
 
 .flex-container {
-  padding: 60px 10px;
+  padding: 80px 10px;
   display: flex;
   flex-wrap: wrap;
+}
+
+.indi-cocktail {
+  padding: 50px 20px;
 }
 
 .cocktail-item {
@@ -50,12 +54,52 @@ a:link {
 
 #banner {
   position: fixed;
-  height: 50px;
+  height: 60px;
   width: 100%;
-  background-color: blue;
+  background-color: #444444;
+}
+
+#hamburger {
+  padding-left: 15px;
+  padding-right: 10px;
+}
+
+.fa-times {
+  font-size: 45px;
+  padding: 5px 2px;
 }
 
 #logo {
+  display: inline;
   margin: 5px;
   width: 40px;
+}
+
+#chin-chin-logo, #hamburger {
+  display: inline;
+  vertical-align: super;
+  font-size: 40px;
+  color: #ffffff;
+  font: Georgia;
+}
+
+#menu {
+  padding: 5px 0;
+  width: 150px;
+  background-color: #444444
+}
+
+.menu-item {
+  color: #ffffff;
+  padding-left: 15px;
+  line-height: 30px;
+  font-size: 20px;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.visible {
+  visibility: visible;
 }
