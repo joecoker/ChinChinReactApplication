@@ -1,11 +1,11 @@
 body {
-  margin: 20px 10px;
+  margin: 0;
   font-family: Georgia, 'Times New Roman', Times, serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-img {
+.thumbnail {
   margin: 25px 0 10px 0;
   border-radius: 10px;
   width: 200px;
@@ -20,6 +20,7 @@ a:link {
 }
 
 .flex-container {
+  padding: 60px 10px;
   display: flex;
   flex-wrap: wrap;
 }
@@ -45,4 +46,16 @@ a:link {
 .base {
   padding-bottom: 15px;
   font-size: 15px;
+}
+
+#banner {
+  position: fixed;
+  height: 50px;
+  width: 100%;
+  background-color: blue;
+}
+
+#logo {
+  margin: 5px;
+  width: 40px;
 }
