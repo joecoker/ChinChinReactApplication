@@ -1,0 +1,48 @@
+body {
+  margin: 20px 10px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+  margin: 25px 0 10px 0;
+  border-radius: 10px;
+  width: 200px;
+}
+
+a { 
+  color: black;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.cocktail-item {
+  transition: background-color 1s ease;
+  margin: auto;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 8px 0 #00000080, 0 6px 20px 0 #00000080;
+  border-radius: 20px;
+  width: 250px;
+  text-align: center;
+}
+
+.cocktail-item:hover {
+  background-color: #c2c2c2;
+}
+
+.name {
+  font-size: 20px;
+}
+
+.base {
+  padding-bottom: 15px;
+  font-size: 15px;
+}
