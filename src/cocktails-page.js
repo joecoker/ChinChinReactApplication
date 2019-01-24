@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import Banner from './banner';
 import CocktailList from './cocktail-list';
 
-let recipes = require('./recipes.json');
+// let recipes = require('./recipes.json');
 
 class CocktailsAll extends Component {
 
@@ -11,7 +11,7 @@ class CocktailsAll extends Component {
     return (
       <div id='cocktails-all'>
         <Banner />
-        <CocktailList recipes={recipes}/>
+        <CocktailList /*recipes={recipes}*//>
       </div>
     )
   }
