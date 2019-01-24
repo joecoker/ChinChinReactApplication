@@ -14,8 +14,8 @@ class CocktailDetails extends Component {
   render() {
     let cocktailDetails = this.getCocktailDetails(this.props.name)
     return (
-      <div>
-        <div><img src='https://www.seriouseats.com/recipes/images/2015/04/20150323-cocktails-vicky-wasik-negroni-1500x1125.jpg' alt='negroni' /></div>
+      <div class="indi-cocktail">
+        <div><img class="thumbnail" src='https://www.seriouseats.com/recipes/images/2015/04/20150323-cocktails-vicky-wasik-negroni-1500x1125.jpg' alt='negroni' /></div>
         <div class='name'>{cocktailDetails.name}</div>
         <ul>{cocktailDetails.ingredients.map(function(ingredient) {
           return <li>{ingredient.ingredient} {ingredient.amount} {ingredient.unit}</li>

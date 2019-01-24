@@ -1,17 +1,17 @@
 body {
-  margin: 20px 10px;
+  margin: 0;
   font-family: Georgia, 'Times New Roman', Times, serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-img {
+.thumbnail {
   margin: 25px 0 10px 0;
   border-radius: 10px;
   width: 200px;
 }
 
-a { 
+.name, .base {
   color: black;
 }
 
@@ -20,8 +20,13 @@ a:link {
 }
 
 .flex-container {
+  padding: 80px 10px;
   display: flex;
   flex-wrap: wrap;
+}
+
+.indi-cocktail {
+  padding: 50px 20px;
 }
 
 .cocktail-item {
@@ -45,4 +50,56 @@ a:link {
 .base {
   padding-bottom: 15px;
   font-size: 15px;
+}
+
+#banner {
+  position: fixed;
+  height: 60px;
+  width: 100%;
+  background-color: #444444;
+}
+
+#hamburger {
+  padding-left: 15px;
+  padding-right: 10px;
+}
+
+.fa-times {
+  font-size: 45px;
+  padding: 5px 2px;
+}
+
+#logo {
+  display: inline;
+  margin: 5px;
+  width: 40px;
+}
+
+#chin-chin-logo, #hamburger {
+  display: inline;
+  vertical-align: super;
+  font-size: 40px;
+  color: #ffffff;
+  font: Georgia;
+}
+
+#menu {
+  padding: 5px 0;
+  width: 150px;
+  background-color: #444444
+}
+
+.menu-item {
+  color: #ffffff;
+  padding-left: 15px;
+  line-height: 30px;
+  font-size: 20px;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.visible {
+  visibility: visible;
 }
