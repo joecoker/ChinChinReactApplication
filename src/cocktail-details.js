@@ -32,14 +32,6 @@ class CocktailDetails extends Component {
       </div>
     )
   }
-
-  //
-  // getCocktailDetails(name) {
-  //   let cocktailDetails = recipes.find(function(element) {
-  //     return element.name === name;
-  //   })
-  //   return cocktailDetails;
-  // }
 }
 
 export default CocktailDetails;

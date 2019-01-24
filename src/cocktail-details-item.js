@@ -6,6 +6,17 @@ class CocktailDetailsItem extends Component {
 
   render() {
     const cocktail = this.props.cocktail
+    let garnish_elem;
+    let garnish_list = '';
+
+    cocktail.garnish.map(function(item) {
+      garnish_list += item + ' and ';
+    })
+
+    if (cocktail.garnish.length !== 0) {
+      garnish_elem = <li>Garnish with: {garnish_list.slice(0, garnish_list.length - 5)}</li>
+    }
+
     return (
       <div class="indi-cocktail">
         <div><img class="thumbnail" src={this.props.cocktail.pictureUrl} alt={this.props.cocktail.name} /></div>
@@ -15,7 +26,7 @@ class CocktailDetailsItem extends Component {
         <ul>{cocktail.ingredients.map(function(ingredient) {
           return <li>{ingredient.amount} {ingredient.unit} {ingredient.ingredient.name}</li>
         })}
-        <li>Garnish with {cocktail.garnish}</li>
+        {garnish_elem}
         </ul>
 
         <div>{cocktail.preparation}</div>
@@ -26,10 +37,3 @@ class CocktailDetailsItem extends Component {
 }
 
 export default CocktailDetailsItem;
-
-
-// <div className='cocktail-item'><Link to={address}>
-//   <div class="image-container"><img class='thumbnail' src={this.props.cocktail.pictureUrl} alt={this.props.cocktail.name} /></div>
-//   <div class='name'>{this.props.cocktail.name}</div>
-//   </Link>
-// </div>
