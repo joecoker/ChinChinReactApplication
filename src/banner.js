@@ -18,7 +18,7 @@ class Banner extends Component {
 
   render() {
     const homeAdd = '/'
-    const cocktailsAdd = '/cocktails'
+    const cocktailsAdd = '/cocktails/all'
     return (
       <div id='banner'>
         <div id='hamburger' onClick={this.toggleMenuIcon}><i class={this.state.isToggleOn ? "fas fa-bars" : "fas fa-times"}></i></div>

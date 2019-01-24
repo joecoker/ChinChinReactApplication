@@ -7,9 +7,7 @@ class CocktailList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      error: null,
-      isLoaded: false,
-      items: []
+      cocktails: []
     };
   }
 
@@ -18,48 +16,22 @@ class CocktailList extends Component {
       .then(res => res.json())
       .then(result => {
           this.setState({
-            isLoaded: true,
-            items: result
-          });
-        },
-        (error) => {
-          this.setState({
-            isLoaded: true,
-            error
+            cocktails: result
           });
         }
       )
   }
 
   render() {
-    const { error, isLoaded, items } = this.state;
-    if (error) {
-      return <div>Error: {error.message}</div>;
-    } else if (!isLoaded) {
-      return <div>Loading...</div>;
-    } else {
-      return (
-        <div class="flex-container">
-          {items.map(cocktail => {
-            return <CocktailListItem cocktail={cocktail} />
-            // <div>
-            //   {cocktail.name}
-            // </div>
-          })}
-        </div>
-      );
-    }
+    const { cocktails } = this.state;
+    return (
+      <div class="flex-container">
+        {cocktails.map(cocktail => {
+          return <CocktailListItem cocktail={cocktail} />
+        })}
+      </div>
+    );
   }
-
-//   render() {
-//     return (
-//       <div class="flex-container">
-//         {this.props.recipes.map(function(cocktail) {
-//           return <CocktailListItem cocktail={cocktail} />
-//         })}
-//       </div>
-//     )
-//   }
 }
 
 export default CocktailList;

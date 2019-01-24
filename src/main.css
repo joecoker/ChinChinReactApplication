@@ -13,9 +13,14 @@ body {
 html {
   height: 100%;
 }
+
 .thumbnail {
-  margin: 25px 0 10px 0;
   border-radius: 10px;
+  width: 200px;
+}
+
+.image-container {
+  margin: 25px 25px 10px 25px;
   width: 200px;
 }
 
@@ -34,7 +39,7 @@ a:link {
 }
 
 .indi-cocktail {
-  padding: 50px 20px;
+  padding: 80px 5px 10px 60px;
 }
 
 .cocktail-item {
