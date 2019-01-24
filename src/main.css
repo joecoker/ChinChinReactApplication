@@ -103,3 +103,14 @@ a:link {
 .visible {
   visibility: visible;
 }
+
+.heading {
+  padding: 80px 5px 10px 60px;
+  font-style: Georgia;
+  font-size: 30px;
+}
+
+.body-text {
+  padding: 0 60px;
+  max-width: 750px;
+}
