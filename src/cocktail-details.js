@@ -12,7 +12,7 @@ class CocktailDetails extends Component {
   }
 
   componentDidMount() {
-    fetch('https://chinchinapi.herokuapp.com/api/chinchin/cocktails/name/'+this.props.name)
+    fetch('https://chinchinapi.herokuapp.com/cocktails/name/'+this.props.name)
       .then(res => res.json())
       .then(result => {
           this.setState({
