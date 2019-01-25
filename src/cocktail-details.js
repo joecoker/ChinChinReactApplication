@@ -1,27 +1,34 @@
 import React, { Component } from 'react';
 
-let recipes = require('./recipes.json');
+import CocktailDetailsItem from './cocktail-details-item';
 
 class CocktailDetails extends Component {
 
-  getCocktailDetails(name) {
-    let cocktailDetails = recipes.find(function(element) {
-      return element.name === name;
-    })
-    return cocktailDetails;
+  constructor(props) {
+    super(props);
+    this.state = {
+      cocktail: []
+    };
+  }
+
+  componentDidMount() {
+    fetch('https://chinchinapi.herokuapp.com/cocktails/name/'+this.props.name)
+      .then(res => res.json())
+      .then(result => {
+          this.setState({
+            cocktail: result
+          });
+        }
+      )
   }
 
   render() {
-    let cocktailDetails = this.getCocktailDetails(this.props.name)
+    const { cocktail } = this.state;
     return (
-      <div class="indi-cocktail">
-        <div><img class="thumbnail" src='https://www.seriouseats.com/recipes/images/2015/04/20150323-cocktails-vicky-wasik-negroni-1500x1125.jpg' alt='negroni' /></div>
-        <div class='name'>{cocktailDetails.name}</div>
-        <ul>{cocktailDetails.ingredients.map(function(ingredient) {
-          return <li>{ingredient.ingredient} {ingredient.amount} {ingredient.unit}</li>
-        })}
-        </ul>
-        <div>{cocktailDetails.preparation}</div>
+      <div>
+      {cocktail.map(cocktail => {
+        return <CocktailDetailsItem cocktail={cocktail} />
+      })}
       </div>
     )
   }

@@ -1,3 +1,5 @@
+html { height: 100%; }
+
 body {
   min-height: 100%;
   padding: 0;
@@ -10,55 +12,33 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-html {
-  height: 100%;
+a:link { text-decoration: none; }
+
+#chin-chin-logo, #hamburger, .menu-item { color: #ffffff; }
+
+#chin-chin-logo, #hamburger, #logo { display: inline; }
+
+#chin-chin-logo, #hamburger {
+  vertical-align: super;
+  font-size: 40px;
+  font: Georgia;
 }
-.thumbnail {
-  margin: 25px 0 10px 0;
+
+.image-container, .thumbnail { 
   border-radius: 10px;
-  width: 200px;
+  height: 200px;
 }
 
-.name, .base {
-  color: black;
-}
-
-a:link {
-  text-decoration: none;
-}
-
-.flex-container {
-  padding: 80px 10px;
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.indi-cocktail {
-  padding: 50px 20px;
-}
+.cocktail-item, .thumbnail { margin: auto; }
 
 .cocktail-item {
   transition: background-color 1s ease;
-  margin: auto;
   margin-bottom: 30px;
   background-color: #ffffff;
   box-shadow: 0 4px 8px 0 #00000080, 0 6px 20px 0 #00000080;
   border-radius: 20px;
   width: 250px;
   text-align: center;
-}
-
-.cocktail-item:hover {
-  background-color: #c2c2c2;
-}
-
-.name {
-  font-size: 20px;
-}
-
-.base {
-  padding-bottom: 15px;
-  font-size: 15px;
 }
 
 #banner {
@@ -68,30 +48,6 @@ a:link {
   background-color: #444444;
 }
 
-#hamburger {
-  padding-left: 15px;
-  padding-right: 10px;
-}
-
-.fa-times {
-  font-size: 45px;
-  padding: 5px 2px;
-}
-
-#logo {
-  display: inline;
-  margin: 5px;
-  width: 40px;
-}
-
-#chin-chin-logo, #hamburger {
-  display: inline;
-  vertical-align: super;
-  font-size: 40px;
-  color: #ffffff;
-  font: Georgia;
-}
-
 #menu {
   padding: 5px 0;
   width: 150px;
@@ -99,28 +55,59 @@ a:link {
   border-radius: 0 0 5px 5px;
 }
 
+.flex-container {
+  padding: 80px 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.image-container {
+  overflow: hidden;
+  margin: 25px 25px 10px 25px;
+  width: 200px;
+}
+
 .menu-item {
-  color: #ffffff;
   padding-left: 15px;
   line-height: 30px;
   font-size: 20px;
-}
-
-.hidden {
-  visibility: hidden;
-}
-
-.visible {
-  visibility: visible;
-}
-
-.heading {
-  padding: 80px 5px 10px 60px;
-  font-style: Georgia;
-  font-size: 30px;
 }
 
 .body-text {
   padding: 0 60px;
   max-width: 750px;
 }
+
+.fa-times {
+  padding: 5px 2px;
+  font-size: 45px;
+}
+
+.heading {
+  padding: 80px 5px 10px 60px;
+  font-size: 30px;
+}
+
+#logo {
+  margin: 5px;
+  width: 40px;
+}
+
+.name {
+  padding: 4px 0 15px;
+  font-size: 20px;
+}
+
+.cocktail-item:hover { background-color: #c2c2c2; }
+
+#hamburger { padding: 0 10px 0 15px; }
+
+.hidden { visibility: hidden; }
+
+.indi-cocktail { padding: 80px 5px 10px 60px; }
+
+.name, .base { color: black; }
+
+.thumbnail { display: block; }
+
+.visible { visibility: visible; }

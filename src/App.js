@@ -3,8 +3,8 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
 import Home from './home'
-import Cocktail from './cocktail'
-import CocktailsAll from './cocktails-page'
+import Cocktail from './cocktail-single'
+import CocktailsAll from './cocktails-all'
 
 class App extends Component {
 
@@ -13,7 +13,7 @@ class App extends Component {
       <Router>
         <div id='routes'>
           <Route exact path="/" component={Home.go} />
-          <Route exact path="/cocktails" component={CocktailsAll.go} />
+          <Route exact path="/cocktails/all" component={CocktailsAll.go} />
           <Route path="/cocktail/:name" component={Cocktail.go} />
         </div>
       </Router>
