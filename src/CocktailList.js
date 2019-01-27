@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import CocktailListItem from './cocktail-list-item';
+import CocktailListItem from './CocktailListItem';
 
 class CocktailList extends Component {
 

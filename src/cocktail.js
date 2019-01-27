@@ -1,15 +1,13 @@
 import React, { Component } from 'react';
 
-import Banner from './banner';
-import CocktailDetails from './cocktail-details';
+import CocktailDetails from './CocktailDetails';
 
 class Cocktail extends Component {
 
   static go({match}) {
     return (
       <div>
-      <Banner />
-      <CocktailDetails name={match.params.name} />
+        <CocktailDetails name={match.params.name} />
       </div>
     )
   }
