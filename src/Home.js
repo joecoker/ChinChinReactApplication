@@ -1,16 +1,13 @@
 import React, { Component } from 'react';
 
-import Banner from './banner';
-
 class Home extends Component {
 
   static go() {
     return (
       <div id='home'>
-        <Banner />
-        <div id="description">
-          <div class="heading">Welcome to Chin Chin</div>
-          <div class="body-text">Chin Chin is your knowledgable guide on your
+        <div id='description'>
+          <div className='heading'>Welcome to Chin Chin</div>
+          <div className='body-text'>Chin Chin is your knowledgable guide on your
             foray into the world of cocktail making. It was inspired by the idea
             of being able to find out which cocktails you can make with the
             ingredients which you already have at home.

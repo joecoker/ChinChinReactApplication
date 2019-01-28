@@ -12,6 +12,20 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+html {
+  height: 100%;
+}
+
+#page-content {
+  margin-top: 60px;
+}
+
+.thumbnail {
+  margin: 25px 0 10px 0;
+  border-radius: 10px;
+  width: 200px;
+}
+
 a:link { text-decoration: none; }
 
 #chin-chin-logo, #hamburger, .menu-item { color: #ffffff; }
@@ -24,28 +38,55 @@ a:link { text-decoration: none; }
   font: Georgia;
 }
 
-.image-container, .thumbnail { 
+.image-container, .thumbnail {
   border-radius: 10px;
   height: 200px;
 }
 
 .cocktail-item, .thumbnail { margin: auto; }
 
-.cocktail-item {
-  transition: background-color 1s ease;
-  margin-bottom: 30px;
+.card {
   background-color: #ffffff;
   box-shadow: 0 4px 8px 0 #00000080, 0 6px 20px 0 #00000080;
   border-radius: 20px;
+}
+
+.cocktail-item {
+  transition: background-color 1s ease;
+  margin-bottom: 30px;
   width: 250px;
   text-align: center;
 }
 
 #banner {
   position: fixed;
+  top: 0;
   height: 60px;
   width: 100%;
   background-color: #444444;
+}
+
+#hamburger {
+  padding-left: 15px;
+  padding-right: 10px;
+}
+
+.fa-times {
+  font-size: 45px;
+  padding: 5px 2px;
+}
+
+#logo {
+  display: inline;
+  margin: 5px;
+  width: 40px;
+}
+
+#chin-chin-logo, #hamburger {
+  display: inline;
+  vertical-align: super;
+  font-size: 40px;
+  color: #ffffff;
 }
 
 #menu {
@@ -66,6 +107,12 @@ a:link { text-decoration: none; }
   margin: 25px 25px 10px 25px;
   width: 200px;
 }
+
+.menu-icon {
+  display: inline-block;
+  width: 30px;
+}
+
 
 .menu-item {
   padding-left: 15px;
@@ -111,3 +158,71 @@ a:link { text-decoration: none; }
 .thumbnail { display: block; }
 
 .visible { visibility: visible; }
+
+.sign-page {
+  width: 360px;
+  padding: 8% 0 0;
+  margin: auto;
+}
+
+.sign-page > .form {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  background: #FFFFFF;
+  max-width: 360px;
+  margin: 0 auto 100px;
+  padding: 45px;
+  text-align: center;
+}
+
+.sign-page > .form input {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  outline: 0;
+  background: #f2f2f2;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+.sign-page > .form .form-submit {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #e3645d;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+  cursor: pointer;
+}
+
+.sign-page > .form .form-submit:hover,.form .form-submit:active,.form .form-submit:focus {
+  background: #d23654;
+}
+
+.sign-page > .form .message {
+  margin: 15px 0 0;
+}
+
+.sign-page > .form .message a {
+  text-decoration: none;
+}
+
+.sign-page > .form .register-form {
+  display: none;
+}
+
+.sign-page >.form .input-title {
+  margin-bottom: 4px;
+  text-align: left;
+}
+
+.sign-page >.form .input-message {
+  color: #FF0000;
+  padding-left: 16px;
+}

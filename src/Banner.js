@@ -41,7 +41,7 @@ class Banner extends Component {
     let loggedIn = this.Auth.loggedIn();
 
     const homeAdd = '/';
-    const cocktailsAdd = '/cocktails/all';
+    const cocktailsAdd = '/cocktails';
     const signInAdd = '/sign-in';
     const signUpAdd = '/sign-up';
     const signOutAdd = '/sign-out';
