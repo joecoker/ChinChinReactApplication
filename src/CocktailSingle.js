@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
-import CocktailDetails from './cocktail-details';
+import CocktailDetails from './CocktailDetails';
 
-class Cocktail extends Component {
+class CocktailSingle extends Component {
 
   static go({match}) {
     return (
@@ -13,4 +13,4 @@ class Cocktail extends Component {
   }
 }
 
-export default Cocktail;
+export default CocktailSingle;
