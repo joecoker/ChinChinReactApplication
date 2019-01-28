@@ -16,10 +16,6 @@ html {
   height: 100%;
 }
 
-#page-content {
-  margin-top: 60px;
-}
-
 .thumbnail {
   margin: 25px 0 10px 0;
   border-radius: 10px;
@@ -64,6 +60,17 @@ a:link { text-decoration: none; }
   height: 60px;
   width: 100%;
   background-color: #444444;
+}
+
+#filters {
+  padding-top: 60px;
+  /* text-align: right; */
+}
+
+#filter-items {
+  /* height: 100px; */
+  width: 100%;
+  background-color: #888888
 }
 
 #hamburger {
@@ -226,3 +233,22 @@ a:link { text-decoration: none; }
   color: #FF0000;
   padding-left: 16px;
 }
+
+/* @media screen and (max-width: 540px) {
+
+  .cocktail-item {
+    width: 176px;
+  }
+
+  .image-container, .thumbnail {
+    height: 140px;
+  }
+
+  .thumbnail {
+    width: 140px;
+  }
+
+  .image-container, .thumbnail {
+    margin: 9px;
+  }
+} */

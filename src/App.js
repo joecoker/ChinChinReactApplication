@@ -10,6 +10,7 @@ import SignUpPage from './SignUpPage'
 import SignOutPage from './SignOutPage'
 import Banner from './Banner';
 import Notifications from 'react-notify-toast';
+import FilterMenu from './FilterMenu';
 
 class App extends Component {
 
@@ -19,6 +20,7 @@ class App extends Component {
         <div id='routes'>
           <Banner />
           <Notifications />
+          <FilterMenu />
           <div id='page-content'>
             <Route exact path="/" component={Home.go} />
             <Route exact path="/cocktails/all" component={CocktailsAll.go} />

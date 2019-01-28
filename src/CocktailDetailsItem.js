@@ -9,6 +9,7 @@ class CocktailDetailsItem extends Component {
     let garnish_elem;
     let garnish_list = '';
 
+    // eslint-disable-next-line
     cocktail.garnish.map(function(item) {
       garnish_list += item + ' and ';
     })
