@@ -19,7 +19,7 @@ class CocktailDetailsItem extends Component {
 
     return (
       <div class="indi-cocktail">
-        <div><img class="thumbnail" src={this.props.cocktail.pictureUrl} alt={this.props.cocktail.name} /></div>
+        <div><img class="thumbnail" src={"https://s3.eu-west-2.amazonaws.com/chinchinreact/full-size/" + this.props.cocktail.pictureUrl } alt={this.props.cocktail.name} /></div>
         <div class='name'>{cocktail.name}</div>
         <div>Glass: {cocktail.glass}</div>
         <div>Category: {cocktail.category}</div>
