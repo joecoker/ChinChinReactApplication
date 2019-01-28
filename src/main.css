@@ -45,11 +45,6 @@ a:link { text-decoration: none; }
 
 .cocktail-item, .thumbnail { margin: auto; }
 
-.cocktail-item {
-  transition: background-color 1s ease;
-  margin-bottom: 30px;
-}
-
 .card {
   background-color: #ffffff;
   box-shadow: 0 4px 8px 0 #00000080, 0 6px 20px 0 #00000080;
@@ -101,6 +96,18 @@ a:link { text-decoration: none; }
   border-radius: 0 0 5px 5px;
 }
 
+.flex-container {
+  padding: 80px 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.image-container {
+  overflow: hidden;
+  margin: 25px 25px 10px 25px;
+  width: 200px;
+}
+
 .menu-icon {
   display: inline-block;
   width: 30px;
@@ -132,6 +139,25 @@ a:link { text-decoration: none; }
   margin: 5px;
   width: 40px;
 }
+
+.name {
+  padding: 4px 0 15px;
+  font-size: 20px;
+}
+
+.cocktail-item:hover { background-color: #c2c2c2; }
+
+#hamburger { padding: 0 10px 0 15px; }
+
+.hidden { visibility: hidden; }
+
+.indi-cocktail { padding: 80px 5px 10px 60px; }
+
+.name, .base { color: black; }
+
+.thumbnail { display: block; }
+
+.visible { visibility: visible; }
 
 .sign-page {
   width: 360px;
