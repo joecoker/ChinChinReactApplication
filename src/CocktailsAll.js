@@ -11,6 +11,7 @@ class CocktailsAll extends Component {
       data: ''
     }
   }
+  
   formChild(params) {
     this.setState({ data: params })
   }

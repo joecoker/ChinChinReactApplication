@@ -6,6 +6,7 @@ class CocktailDetailsItem extends Component {
 
   render() {
     const cocktail = this.props.cocktail
+    console.log(cocktail)
     let garnish_elem;
     let garnish_list = '';
 
