@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import CocktailListItem from './CocktailListItem';
+import FilterMenu from './FilterMenu';
 
 class CocktailList extends Component {
 
@@ -26,6 +27,7 @@ class CocktailList extends Component {
     const { cocktails } = this.state;
     return (
       <div class="flex-container">
+      <p>{this.props.data}</p>
         {cocktails.map(cocktail => {
           return <CocktailListItem cocktail={cocktail} />
         })}

@@ -1,16 +1,21 @@
 import React, { Component } from 'react';
 // eslint-disable-next-line
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 class FilterMenu extends Component {
 
   constructor() {
     super();
-    this.state = {isVisible: false};
-
-
-// EVENT HANDLERS HERE
+    this.state = {
+        isVisible: false,
+        ingredients: '',
+      };
+    this.handleFormSubmit = this.handleFormSubmit.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
+
+
 
   handleClick() {
 
@@ -22,46 +27,62 @@ class FilterMenu extends Component {
     }))
   }
 
+  handleFormSubmit(event){
+    event.preventDefault();
+    this.props.callback(this.state.ingredients)
+  }
+
+  handleChange(event) {
+    this.setState({ingredients: this.state.ingredients.concat(event.target.value+',')})
+  }
+
   render() {
     return (
       <div id='filters'>
         <div>filter</div>
-        <form class='tick-boxes' onSubmit={this.handleFormSubmit} ></form>
+        <form onSubmit={this.handleFormSubmit}>
         <div id='filter-items'>
           <div id='spirits'>
           <div>Spirits</div>
-            <input form='tick-boxes' type='checkbox' value='Gin' />Gin
-            <input form='tick-boxes' type='checkbox' value='Vodka' />Vodka
-            <input form='tick-boxes' type='checkbox' value='Triple Sec' />Triple Sec
-            <input form='tick-boxes' type='checkbox' value='White Rum' />White Rum
-            <input form='tick-boxes' type='checkbox' value='Dark Rum' />Dark Rum
-            <input form='tick-boxes' type='checkbox' value='Cognac' />Cognac
-            <input form='tick-boxes' type='checkbox' value='Vermouth'/>Vermouth
-            <input form='tick-boxes' type='checkbox' value='Gin'/>Whiskey
-            <input form='tick-boxes' type='checkbox' value='Whiskey'/>Tequila
-            <input form='tick-boxes' type='checkbox' value='Champagne'/>Champagne
+            <input type='checkbox' name='spirit' value='Gin' onChange={this.handleChange}/>Gin
+            <input type='checkbox' name='spirit' value='Vodka' onChange={this.handleChange} />Vodka
+            <input type='checkbox' name='spirit' value='Triple Sec' onChange={this.handleChange} />Triple Sec
+            <input type='checkbox' name='spirit' value='White Rum' onChange={this.handleChange} />White Rum
+            <input type='checkbox' name='spirit' value='Dark Rum' onChange={this.handleChange} />Dark Rum
+            <input type='checkbox' name='spirit' value='Cognac' onChange={this.handleChange} />Cognac
+            <input type='checkbox' name='spirit' value='Vermouth' onChange={this.handleChange} />Vermouth
+            <input type='checkbox' name='spirit' value='Whiskey' onChange={this.handleChange} />Whiskey
+            <input type='checkbox' name='spirit' value='Tequila' onChange={this.handleChange} />Tequila
+            <input type='checkbox' name='spirit' value='Champagne' onChange={this.handleChange} />Champagne
           </div>
           <div id='mixers'>
           <div>Mixers</div>
-            <input form='tick-boxes' type='checkbox' value='Orange Juice' />Orange Juice
-            <input form='tick-boxes' type='checkbox' value='Pineapple Juice' />Pineapple Juice
-            <input form='tick-boxes' type='checkbox' value='Cranberry Juice' />Cranberry Juice
-            <input form='tick-boxes' type='checkbox' value='Lemon Juice' />Lemon Juice
-            <input form='tick-boxes' type='checkbox' value='Lime Juice' />Lime Juice
-            <input form='tick-boxes' type='checkbox' value='Cream' />Cream
+            <input type='checkbox' value='Orange Juice' onChange={this.handleChange} />Orange Juice
+            <input type='checkbox' value='Pineapple Juice' onChange={this.handleChange} />Pineapple Juice
+            <input type='checkbox' value='Cranberry Juice' onChange={this.handleChange} />Cranberry Juice
+            <input type='checkbox' value='Lemon Juice' onChange={this.handleChange} />Lemon Juice
+            <input type='checkbox' value='Lime Juice' onChange={this.handleChange} />Lime Juice
+            <input type='checkbox' value='Cream' onChange={this.handleChange} />Cream
           </div>
           <div id='liqueurs'>
           <div>Mixers</div>
-            <input form='tick-boxes' type='checkbox' value='Coffee Liqueur' />Coffee Liqueur
-            <input form='tick-boxes' type='checkbox' value='Créme Liqueur' />Créme Liqueur
-            <input form='tick-boxes' type='checkbox' value='Maraschino Cherry Liqueur' />Maraschino Cherry Liqueur
-            <input form='tick-boxes' type='checkbox' value='Galliano' />Galliano
+            <input type='checkbox' value='Coffee Liqueur' onChange={this.handleChange} />Coffee Liqueur
+            <input type='checkbox' value='Créme Liqueur' onChange={this.handleChange} />Créme Liqueur
+            <input type='checkbox' value='Maraschino Cherry Liqueur' onChange={this.handleChange} />Maraschino Cherry Liqueur
+            <input type='checkbox' value='Galliano' onChange={this.handleChange} />Galliano
           </div>
-        </div>
+            <button type='submit' >Go</button>
+            </div>
+            </form>
+
       </div>
     )
   }
-  
+
+}
+
+FilterMenu.protoTypes = {
+  callback: PropTypes.func,
 }
 
 export default FilterMenu;
