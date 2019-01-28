@@ -14,6 +14,8 @@ class DrinksCabinetList extends Component {
       allIngredients: [],
       cabinetIngredients: []
     }
+    this.addToCabinet = this.addToCabinet.bind(this);
+    this.deleteFromCabinet = this.deleteFromCabinet.bind(this);
   }
 
   componentWillMount(){
@@ -21,12 +23,44 @@ class DrinksCabinetList extends Component {
     .then(res => res.json())
     .then(result => {
         this.setState({
-          allIngredients: result
+          allIngredients: result.sort((a,b) => {
+            if (a.name.toLowerCase() < b.name.toLowerCase()) {
+              return -1;
+            } else if (a.name.toLowerCase() > b.name.toLowerCase()) {
+              return 1;
+            } else {
+              return 0;
+            }
+          })
         });
       }
     )
 
     this.Auth.fetch('https://chinchinapi.herokuapp.com/user/cabinet/view')
+    .then(result => {
+      this.setState({
+        cabinetIngredients: result.cabinetIngredients
+      })
+    })
+  }
+
+  addToCabinet(ingredientName) {
+    this.Auth.fetch('https://chinchinapi.herokuapp.com/user/cabinet/add', {
+      method: 'POST',
+      body: '{"ingredientsList": ["' + ingredientName + '"]}'
+    })
+    .then(result => {
+      this.setState({
+        cabinetIngredients: result.cabinetIngredients
+      })
+    })
+  }
+
+  deleteFromCabinet(ingredientName) {
+    this.Auth.fetch('https://chinchinapi.herokuapp.com/user/cabinet/delete', {
+      method: 'POST',
+      body: '{"ingredientsList": ["' + ingredientName + '"]}'
+    })
     .then(result => {
       this.setState({
         cabinetIngredients: result.cabinetIngredients
@@ -44,7 +78,13 @@ class DrinksCabinetList extends Component {
               } else {
                 var divType='not-in-cabinet';
               }
-              return <div className={divType}>{ingredient.name}</div>
+              return (
+                <div className={divType}>
+                  {ingredient.name}
+                  <button onClick={this.addToCabinet.bind(this, ingredient.name)}>Add</button>
+                  <button onClick={this.deleteFromCabinet.bind(this, ingredient.name)}>Delete</button>
+                </div>
+              )
           }) }
         </div>
     )
