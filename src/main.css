@@ -1,3 +1,5 @@
+html { height: 100%; }
+
 body {
   min-height: 100%;
   padding: 0;
@@ -24,29 +26,34 @@ html {
   width: 200px;
 }
 
-.name, .base {
-  color: black;
+a:link { text-decoration: none; }
+
+#chin-chin-logo, #hamburger, .menu-item { color: #ffffff; }
+
+#chin-chin-logo, #hamburger, #logo { display: inline; }
+
+#chin-chin-logo, #hamburger {
+  vertical-align: super;
+  font-size: 40px;
+  font: Georgia;
 }
 
-a:link {
-  text-decoration: none;
+.image-container, .thumbnail {
+  border-radius: 10px;
+  height: 200px;
 }
 
-.flex-container {
-  padding: 80px 10px;
-  display: flex;
-  flex-wrap: wrap;
-}
+.cocktail-item, .thumbnail { margin: auto; }
 
-.indi-cocktail {
-  padding: 50px 20px;
+.cocktail-item {
+  transition: background-color 1s ease;
+  margin-bottom: 30px;
 }
 
 .card {
   background-color: #ffffff;
   box-shadow: 0 4px 8px 0 #00000080, 0 6px 20px 0 #00000080;
   border-radius: 20px;
-  margin: auto;
 }
 
 .cocktail-item {
@@ -54,19 +61,6 @@ a:link {
   margin-bottom: 30px;
   width: 250px;
   text-align: center;
-}
-
-.cocktail-item:hover {
-  background-color: #c2c2c2;
-}
-
-.name {
-  font-size: 20px;
-}
-
-.base {
-  padding-bottom: 15px;
-  font-size: 15px;
 }
 
 #banner {
@@ -112,19 +106,21 @@ a:link {
   width: 30px;
 }
 
+
 .menu-item {
-  color: #ffffff;
   padding-left: 15px;
   line-height: 30px;
   font-size: 20px;
 }
 
-.hidden {
-  visibility: hidden;
+.body-text {
+  padding: 0 60px;
+  max-width: 750px;
 }
 
-.visible {
-  visibility: visible;
+.fa-times {
+  padding: 5px 2px;
+  font-size: 45px;
 }
 
 .heading {
@@ -132,9 +128,9 @@ a:link {
   font-size: 30px;
 }
 
-.body-text {
-  padding: 0 60px;
-  max-width: 750px;
+#logo {
+  margin: 5px;
+  width: 40px;
 }
 
 .sign-page {
