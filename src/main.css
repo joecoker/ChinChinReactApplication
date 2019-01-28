@@ -90,8 +90,8 @@ a:link { text-decoration: none; }
 }
 
 #menu {
-  padding: 5px 0;
-  width: 150px;
+  padding: 5px 15px;
+  width: max-content;
   background-color: #444444;
   border-radius: 0 0 5px 5px;
 }
@@ -115,7 +115,6 @@ a:link { text-decoration: none; }
 
 
 .menu-item {
-  padding-left: 15px;
   line-height: 30px;
   font-size: 20px;
 }
@@ -225,4 +224,18 @@ a:link { text-decoration: none; }
 .sign-page >.form .input-message {
   color: #FF0000;
   padding-left: 16px;
+}
+
+.in-cabinet {
+  color: #00FF00;
+}
+
+.not-in-cabinet {
+  color: #FF00FF;
+}
+
+.drinks-cabinet-list {
+  width: 75%;
+  margin: 100px;
+  padding: 25px;
 }
