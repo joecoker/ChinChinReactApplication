@@ -6,9 +6,11 @@ class CocktailDetailsItem extends Component {
 
   render() {
     const cocktail = this.props.cocktail
+    console.log(cocktail)
     let garnish_elem;
     let garnish_list = '';
 
+    // eslint-disable-next-line
     cocktail.garnish.map(function(item) {
       garnish_list += item + ' and ';
     })
@@ -19,17 +21,21 @@ class CocktailDetailsItem extends Component {
 
     return (
       <div class="indi-cocktail">
-        <div><img class="thumbnail" src={"https://s3.eu-west-2.amazonaws.com/chinchinreact/full-size/" + this.props.cocktail.pictureUrl } alt={this.props.cocktail.name} /></div>
-        <div class='name'>{cocktail.name}</div>
-        <div>Glass: {cocktail.glass}</div>
-        <div>Category: {cocktail.category}</div>
-        <ul>{cocktail.ingredients.map(function(ingredient) {
-          return <li>{ingredient.amount} {ingredient.unit} {ingredient.ingredient.name}</li>
-        })}
-        {garnish_elem}
-        </ul>
-
-        <div>{cocktail.preparation}</div>
+        <div id='picture-padding'><img class="full-size" src={"https://s3.eu-west-2.amazonaws.com/chinchinreact/full-size/" + this.props.cocktail.pictureUrl } alt={this.props.cocktail.name} /></div>
+        <div id='cocktail-details'>
+          <div class='top-heading'>{cocktail.name}</div><br/>
+          <div class='heading'>Glass:<span> {cocktail.glass}</span></div>
+          <div class='heading'>Category:<span> {cocktail.category}</span></div><br/>
+          <div class='heading'>Ingredients:</div>
+          <ul>{cocktail.ingredients.map(function(ingredient) {
+            return <li>{ingredient.amount} {ingredient.unit} {ingredient.ingredient.name}</li>
+          })}
+          {garnish_elem}
+          </ul>
+          <br/>
+          <div class='heading'>Method:</div>
+          <div>{cocktail.preparation}</div>
+          </div>
       </div>
 
     )

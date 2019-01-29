@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router';
 import AuthService from './AuthService';
+// eslint-disable-next-line
 import Notifications, {notify} from 'react-notify-toast';
 
 class SignOutPage extends Component {

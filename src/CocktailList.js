@@ -13,19 +13,42 @@ class CocktailList extends Component {
 
   componentDidMount() {
     fetch('https://chinchinapi.herokuapp.com/cocktails/all')
-      .then(res => res.json())
-      .then(result => {
-          this.setState({
-            cocktails: result
-          });
-        }
-      )
+    .then(res => res.json())
+    .then(result => {
+        this.setState({
+          cocktails: result
+        });
+      }
+    )
+  }
+  
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.data === '') {
+      fetch('https://chinchinapi.herokuapp.com/cocktails/all')
+        .then(res => res.json())
+        .then(result => {
+            this.setState({
+              cocktails: result
+            });
+          }
+        )
+    }
+    else {
+      fetch('https://chinchinapi.herokuapp.com/cocktails/filter/by-ingredient/' + nextProps.data)
+        .then(res => res.json())
+        .then(result => {
+            this.setState({
+              cocktails: result
+            });
+          }
+        )
+    }
   }
 
   render() {
-    const { cocktails } = this.state;
+    let { cocktails } = this.state;
     return (
-      <div class="flex-container">
+      <div id="flex-container">
         {cocktails.map(cocktail => {
           return <CocktailListItem cocktail={cocktail} />
         })}
