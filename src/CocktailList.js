@@ -12,16 +12,18 @@ class CocktailList extends Component {
   }
 
   componentDidMount() {
-    fetch('https://chinchinapi.herokuapp.com/cocktails/all')
-    .then(res => res.json())
-    .then(result => {
-        this.setState({
-          cocktails: result
-        });
-      }
-    )
+    if(!this.props.noInitialRender) {
+      fetch('https://chinchinapi.herokuapp.com/cocktails/all')
+      .then(res => res.json())
+      .then(result => {
+          this.setState({
+            cocktails: result
+          });
+        }
+      )
+    }
   }
-  
+
   componentWillReceiveProps(nextProps) {
     if (nextProps.data === '') {
       fetch('https://chinchinapi.herokuapp.com/cocktails/all')
