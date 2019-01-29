@@ -272,6 +272,38 @@ a:link {
 
 /* #endregion */
 
+
+/* #region drinks-cabinet */
+  
+.in-cabinet {
+  color: #00FF00;
+}
+
+.not-in-cabinet {
+  color: #FF00FF;
+}
+
+.drinks-cabinet-list {
+  width: 75%;
+  margin: 100px;
+  padding: 25px;
+  line-height: 30px;
+  font-size: 20px;
+}
+
+.drinks-cabinet-list-item:nth-child(odd) {
+  background: #e0e0e0;
+}
+
+.star-button {
+  padding: 10px;
+  font-size: 25px;
+  border: none;
+  background: none;
+}
+  
+/* #endregion */
+
 /* @media screen and (max-width: 540px) {
 
   .cocktail-item {
