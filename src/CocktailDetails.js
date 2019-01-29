@@ -8,7 +8,8 @@ import React, { Component } from 'react';
 	    super(props);
 	    this.state = {
 	      cocktail: []
-	    };
+			};
+		}
 	
 	  componentDidMount() {
 	    fetch('https://chinchinapi.herokuapp.com/cocktails/name/' + this.props.name)
