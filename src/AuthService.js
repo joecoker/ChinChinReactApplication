@@ -31,6 +31,13 @@ export default class AuthService {
           password
         })
       }).then(res => {
+        return this.fetch(`${this.domain}/login`, {
+          method: 'POST',
+          body: JSON.stringify({
+              email,
+              password
+          })
+      })}).then(res => {
         this.setToken(res.token)
         return Promise.resolve(res);
       })
@@ -86,7 +93,11 @@ export default class AuthService {
         // Setting Authorization header
         // Authorization: Bearer xxxxxxx.xxxxxxxx.xxxxxx
         if (this.loggedIn()) {
+            console.log('logged in route')
+            console.log(`token: ${this.getToken()}`)
             headers['Authorization'] = 'Bearer ' + this.getToken()
+        } else {
+          console.log('not logged in route')
         }
 
         return fetch(url, {

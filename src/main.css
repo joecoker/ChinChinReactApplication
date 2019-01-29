@@ -69,9 +69,9 @@ a:link {
 
 #menu {
   box-shadow: 0 4px 4px 0 #00000080;
-  border-radius: 0 0 10px 10px;
-  width: 150px;
-  padding: 10px 0;
+  border-radius: 0 0 5px 5px;
+  width: max-content;
+  padding: 5px 25px;
   background-color: #444444;
 }
 
@@ -84,8 +84,7 @@ a:link {
 }
 
 .menu-item {
-  padding-left: 15px;
-  line-height: 30px;
+  line-height: 40px;
   font-size: 20px;
   color: #ffffff;
 }
@@ -316,7 +315,6 @@ a:link {
 
 /* #endregion */
 
-
 /* #region drinks-cabinet */
 
 .in-cabinet {
@@ -335,7 +333,7 @@ a:link {
   font-size: 20px;
 }
 
-.drinks-cabinet-list-item:nth-child(odd) {
+.drinks-cabinet-list-item:nth-of-type(odd) {
   background: #e0e0e0;
 }
 
@@ -344,6 +342,14 @@ a:link {
   font-size: 25px;
   border: none;
   background: none;
+}
+
+.drinks-cabinet-page {
+  padding-top: 160px;
+}
+
+.drinks-cabinet-cocktails-page {
+  padding-top: 160px;
 }
 
 /* #endregion */
