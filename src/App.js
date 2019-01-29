@@ -8,6 +8,7 @@ import CocktailsAll from './CocktailsAll'
 import SignInPage from './SignInPage'
 import SignUpPage from './SignUpPage'
 import SignOutPage from './SignOutPage'
+import DrinksCabinetPage from './DrinksCabinetPage'
 import Banner from './Banner';
 import Notifications from 'react-notify-toast';
 
@@ -25,6 +26,7 @@ class App extends Component {
             <Route path="/cocktail/:name" component={CocktailSingle.go} />
             <Route exact path="/sign-in" component={SignInPage.go} />
             <Route exact path="/sign-up" component={SignUpPage.go} />
+            <Route exact path="/drinks-cabinet" component={DrinksCabinetPage.go} />
             <Route exact path="/sign-out" component={SignOutPage} />
           </div>
         </div>
