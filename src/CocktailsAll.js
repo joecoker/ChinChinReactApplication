@@ -8,19 +8,20 @@ class CocktailsAll extends Component {
   constructor(){
     super();
     this.state ={
-      data: []
+      ingredients: [],
+      maxMissing: null
     }
   }
 
-  formChild(params) {
-    this.setState({ data: params })
+  formChild(ingredients, maxMissing) {
+    this.setState({ ingredients: ingredients, maxMissing: maxMissing })
   }
 
   render() {
     return (
       <div id='cocktails-all'>
         <FilterMenu callback={this.formChild.bind(this)}/>
-        <CocktailList data={this.state.data}/>
+        <CocktailList data={this.state}/>
       </div>
     )
   }

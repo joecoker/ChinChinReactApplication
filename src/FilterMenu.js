@@ -10,9 +10,11 @@ class FilterMenu extends Component {
     this.state = {
         isVisible: false,
         ingredients: [],
+        maxMissing: null
       };
     this.toggleFilterMenu = this.toggleFilterMenu.bind(this);
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
+    this.handleNumber = this.handleNumber.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.clearIngredients = this.clearIngredients.bind(this);
   }
@@ -29,7 +31,7 @@ class FilterMenu extends Component {
 
   handleFormSubmit(event){
     event.preventDefault();
-    this.props.callback(this.state.ingredients)
+    this.props.callback(this.state.ingredients, this.state.maxMissing)
   }
 
   handleChange(event) {
@@ -46,15 +48,19 @@ class FilterMenu extends Component {
   }
 
   async clearIngredients(event){
-    await this.setState({ingredients: []})
-    this.props.callback(this.state.ingredients)
+    await this.setState({ingredients: [], maxMissing: null})
+    this.props.callback(this.state.ingredients, this.state.maxMissing)
+  }
+
+  handleNumber(event) {
+    this.setState({maxMissing: event.target.value});
   }
 
   render() {
     return (
       <div id='filters'>
-        <div class={this.state.isVisible ? 'collapse-filter-menu' : 'show-filters-menu'} onClick={this.toggleFilterMenu} >Filter</div>
-            <div id='filter-items' class={this.state.isVisible ? 'show-filters-menu' : 'collapse-filter-menu'}>
+        <div id='filter-bar' class={this.state.isVisible ? 'collapse-filter-menu' : 'show-filters-menu'} onClick={this.toggleFilterMenu} >Filter</div>
+          <div id='filter-items' class={this.state.isVisible ? 'show-filters-menu' : 'collapse-filter-menu'}>
             <form onSubmit={this.handleFormSubmit}>
               <div id='spirits'>
               <span>Spirits</span>
@@ -80,16 +86,19 @@ class FilterMenu extends Component {
                 <input type='checkbox' value='Cream' onChange={this.handleChange} />Cream
               </div>
               <div id='liqueurs'>
-              <div>Mixers</div>
+              <div>Liqueurs</div>
                 <input type='checkbox' value='Coffee Liqueur' onChange={this.handleChange} />Coffee Liqueur
                 <input type='checkbox' value='Créme Liqueur' onChange={this.handleChange} />Créme Liqueur
                 <input type='checkbox' value='Maraschino Cherry Liqueur' onChange={this.handleChange} />Maraschino Cherry Liqueur
                 <input type='checkbox' value='Galliano' onChange={this.handleChange} />Galliano
               </div>
+              <div>
+                <input id='max-missing-input' type='number' onChange={this.handleNumber} />Maximum number of missing ingredients in each recipe
+              </div>
               <button type='submit' >Go</button>
               <button type='reset' onClick={this.clearIngredients} >Clear</button>
-              </form>
-            </div>
+            </form>
+          </div>
       </div>
     )
   }

@@ -116,8 +116,7 @@ a:link {
 
 /* #region filter */
 
-.collapse-menu {
-  text-align: right;
+.collapse-menu, .show-filters-menu, .collapse-filter-menu {
   float: right;
 }
 
@@ -136,6 +135,22 @@ a:link {
 #filter-items {
   width: 100%;
   background-color: #888888
+}
+
+#filter-bar {
+  width: 100%;
+  text-align: right
+}
+
+#no-results {
+  width: 100%;
+  padding-top: 100px;
+  text-align: center;
+  font-size: 1.5em
+}
+
+#max-missing-input {
+  width: 2em
 }
 
 /* #endregion */
