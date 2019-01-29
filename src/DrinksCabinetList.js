@@ -74,15 +74,13 @@ class DrinksCabinetList extends Component {
           {
             this.state.allIngredients.map((ingredient) => {
               if (this.state.cabinetIngredients.includes(ingredient.name)) {
-                var divType='in-cabinet';
+                var divContent = <button onClick={this.deleteFromCabinet.bind(this, ingredient.name)} className='star-button'><i className="fas fa-star" /></button>
               } else {
-                var divType='not-in-cabinet';
+                var divContent = <button onClick={this.addToCabinet.bind(this, ingredient.name)} className='star-button'><i className="far fa-star" /></button>
               }
               return (
-                <div className={divType}>
-                  {ingredient.name}
-                  <button onClick={this.addToCabinet.bind(this, ingredient.name)}>Add</button>
-                  <button onClick={this.deleteFromCabinet.bind(this, ingredient.name)}>Delete</button>
+                <div className='drinks-cabinet-list-item'>
+                  {divContent} {ingredient.name}
                 </div>
               )
           }) }
