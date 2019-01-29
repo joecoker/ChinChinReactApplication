@@ -13,13 +13,14 @@ class FilterMenu extends Component {
       };
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.clearIngredients = this.clearIngredients.bind(this);
   }
 
   // handleClick() {
 
   // }
 
-  // toggleFilterIcon() {
+  // toggleFilterMenu() {
   //   this.setState(state => ({
   //     isVisible: !state.isVisible
   //   }))
@@ -41,6 +42,11 @@ class FilterMenu extends Component {
       ingredients.push(toggledIngredient);
     }
     this.setState({ingredients: ingredients});
+  }
+
+  async clearIngredients(event){
+    await this.setState({ingredients: []})
+    this.props.callback(this.state.ingredients)
   }
 
   render() {
@@ -79,6 +85,7 @@ class FilterMenu extends Component {
                 <input type='checkbox' value='Galliano' onChange={this.handleChange} />Galliano
               </div>
               <button type='submit' >Go</button>
+              <button type='reset' onClick={this.clearIngredients} >Clear</button>
             </div>
           </form>
       </div>
