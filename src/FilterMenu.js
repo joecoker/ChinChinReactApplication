@@ -11,6 +11,7 @@ class FilterMenu extends Component {
         isVisible: false,
         ingredients: [],
       };
+    this.toggleFilterMenu = this.toggleFilterMenu.bind(this);
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.clearIngredients = this.clearIngredients.bind(this);
@@ -20,11 +21,11 @@ class FilterMenu extends Component {
 
   // }
 
-  // toggleFilterMenu() {
-  //   this.setState(state => ({
-  //     isVisible: !state.isVisible
-  //   }))
-  // }
+  toggleFilterMenu() {
+    this.setState(state => ({
+      isVisible: !state.isVisible
+    }))
+  }
 
   handleFormSubmit(event){
     event.preventDefault();
@@ -52,11 +53,12 @@ class FilterMenu extends Component {
   render() {
     return (
       <div id='filters'>
-        <div>filter</div>
-          <form onSubmit={this.handleFormSubmit}>
-            <div id='filter-items'>
+        <div class={this.state.isVisible ? 'collapse-filter-menu' : 'show-filters-menu'} onClick={this.toggleFilterMenu} >Filter</div>
+            <div id='filter-items' class={this.state.isVisible ? 'show-filters-menu' : 'collapse-filter-menu'}>
+            <form onSubmit={this.handleFormSubmit}>
               <div id='spirits'>
-              <div>Spirits</div>
+              <span>Spirits</span>
+              <span class='collapse-menu' onClick={this.toggleFilterMenu}>Collapse</span><br/>
                 <input type='checkbox' name='spirit' value='Gin' onChange={this.handleChange} />Gin
                 <input type='checkbox' name='spirit' value='Vodka' onChange={this.handleChange} />Vodka
                 <input type='checkbox' name='spirit' value='Triple Sec' onChange={this.handleChange} />Triple Sec
@@ -86,8 +88,8 @@ class FilterMenu extends Component {
               </div>
               <button type='submit' >Go</button>
               <button type='reset' onClick={this.clearIngredients} >Clear</button>
+              </form>
             </div>
-          </form>
       </div>
     )
   }

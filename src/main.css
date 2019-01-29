@@ -116,6 +116,19 @@ a:link {
 
 /* #region filter */
 
+.collapse-menu {
+  text-align: right;
+  float: right;
+}
+
+.show-filters-menu {
+  display: inline;
+}
+
+.collapse-filter-menu {
+  display: none;
+}
+
 #filters {
   padding-top: 60px;
 }
@@ -274,7 +287,7 @@ a:link {
 
 
 /* #region drinks-cabinet */
-  
+
 .in-cabinet {
   color: #00FF00;
 }
@@ -301,7 +314,7 @@ a:link {
   border: none;
   background: none;
 }
-  
+
 /* #endregion */
 
 /* @media screen and (max-width: 540px) {
