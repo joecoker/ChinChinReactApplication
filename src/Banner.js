@@ -50,13 +50,13 @@ class Banner extends Component {
       <div id='banner'>
         <div id='hamburger' onClick={this.handleClick}><i className={this.state.isVisible ? 'fas fa-times' : 'fas fa-bars'} /></div>
         <img id='logo' src='/negroni.ico' alt='Chin Chin logo'></img>
-        <div id='chin-chin-logo'>Chin Chin</div>
+        <div id='chin-chin'>Chin Chin</div>
         <div id='menu' className={this.state.isVisible ? 'visible' : 'hidden'}>
           <Link to={homeAdd}><div className='menu-item'><span className='menu-icon'><i className='fas fa-home' /></span> Home</div></Link>
           <Link to={cocktailsAdd}><div className='menu-item'><span className='menu-icon'><i className='fas fa-cocktail' /></span> Cocktails</div></Link>
-          {!loggedIn && <Link to={signInAdd}><div className='menu-item'><span className='menu-icon'><i class='fas fa-sign-in-alt' /></span> Sign In</div></Link>}
-          {!loggedIn && <Link to={signUpAdd}><div className='menu-item'><span className='menu-icon'><i class='fas fa-user-plus' /></span> Sign Up</div></Link>}
-          {loggedIn && <Link to={signOutAdd}><div className='menu-item'><span className='menu-icon'><i class='fas fa-sign-out-alt' /></span> Sign Out</div></Link>}
+          {!loggedIn && <Link to={signInAdd}><div className='menu-item'><span className='menu-icon'><i className='fas fa-sign-in-alt' /></span> Sign In</div></Link>}
+          {!loggedIn && <Link to={signUpAdd}><div className='menu-item'><span className='menu-icon'><i className='fas fa-user-plus' /></span> Sign Up</div></Link>}
+          {loggedIn && <Link to={signOutAdd}><div className='menu-item'><span className='menu-icon'><i className='fas fa-sign-out-alt' /></span> Sign Out</div></Link>}
         </div>
       </div>
     )

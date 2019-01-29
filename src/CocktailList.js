@@ -48,7 +48,7 @@ class CocktailList extends Component {
   render() {
     let { cocktails } = this.state;
     return (
-      <div class="flex-container">
+      <div id="flex-container">
         {cocktails.map(cocktail => {
           return <CocktailListItem cocktail={cocktail} />
         })}

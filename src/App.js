@@ -2,21 +2,21 @@ import React, { Component } from 'react';
 // eslint-disable-next-line
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
+import Banner from './Banner';
+import Notifications from 'react-notify-toast';
 import Home from './Home'
 import CocktailSingle from './CocktailSingle'
 import CocktailsAll from './CocktailsAll'
 import SignInPage from './SignInPage'
 import SignUpPage from './SignUpPage'
 import SignOutPage from './SignOutPage'
-import Banner from './Banner';
-import Notifications from 'react-notify-toast';
 
 class App extends Component {
 
   render() {
     return (
       <Router>
-        <div id='routes'>
+        <div>
           <Banner />
           <Notifications />
           <div id='page-content'>
