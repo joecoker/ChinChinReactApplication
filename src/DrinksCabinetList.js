@@ -36,6 +36,12 @@ class DrinksCabinetList extends Component {
       }
     )
 
+    if (this.Auth.loggedIn()) {
+      console.log('user is logged in')
+    } else {
+      console.log('user is not logged in')
+    }
+
     this.Auth.fetch('https://chinchinapi.herokuapp.com/user/cabinet/view')
     .then(result => {
       this.setState({
