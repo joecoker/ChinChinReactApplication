@@ -3,8 +3,6 @@ import { Link } from 'react-router-dom';
 import { withRouter } from 'react-router';
 import AuthService from './AuthService';
 
-let validator = require("email-validator");
-
 class DrinksCabinetList extends Component {
 
   constructor() {

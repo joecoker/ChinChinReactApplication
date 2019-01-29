@@ -6,12 +6,14 @@ import CocktailList from './CocktailList';
 
 class DrinksCabinetCocktailsPage extends Component {
 
-  constructor() {
+  constructor(match) {
     super();
     this.Auth = new AuthService();
     this.state = {
-      cabinetIngredients: []
+      cabinetIngredients: [],
+      only: match.match.params.param === 'only' ? '/0' : ''
     }
+    console.log();
   }
 
   componentDidMount(){
@@ -27,7 +29,9 @@ class DrinksCabinetCocktailsPage extends Component {
 
     return (
       <div className='drinks-cabinet-cocktails-page'>
-        <CocktailList data={this.state.cabinetIngredients} noInitialRender='true' />
+        <CocktailList data={
+          this.state.cabinetIngredients + this.state.only
+        } noInitialRender='true' />
       </div>
     )
   }

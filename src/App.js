@@ -28,7 +28,7 @@ class App extends Component {
             <Route exact path="/sign-in" component={SignInPage.go} />
             <Route exact path="/sign-up" component={SignUpPage.go} />
             <Route exact path="/drinks-cabinet" component={DrinksCabinetPage.go} />
-            <Route exact path="/drinks-cabinet-cocktails" component={DrinksCabinetCocktailsPage} />
+            <Route path="/drinks-cabinet-cocktails/:param?" component={DrinksCabinetCocktailsPage} />
             <Route exact path="/sign-out" component={SignOutPage} />
           </div>
         </div>
