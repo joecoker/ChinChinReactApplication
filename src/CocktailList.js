@@ -21,9 +21,9 @@ class CocktailList extends Component {
       }
     )
   }
-  
+
   componentWillReceiveProps(nextProps) {
-    if (nextProps.data === '') {
+    if (nextProps.data.length === 0) {
       fetch('https://chinchinapi.herokuapp.com/cocktails/all')
         .then(res => res.json())
         .then(result => {

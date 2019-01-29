@@ -8,10 +8,10 @@ class CocktailsAll extends Component {
   constructor(){
     super();
     this.state ={
-      data: ''
+      data: []
     }
   }
-  
+
   formChild(params) {
     this.setState({ data: params })
   }

@@ -9,7 +9,7 @@ class FilterMenu extends Component {
     super();
     this.state = {
         isVisible: false,
-        ingredients: '',     
+        ingredients: [],
       };
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -31,7 +31,16 @@ class FilterMenu extends Component {
   }
 
   handleChange(event) {
-    this.setState({ingredients: this.state.ingredients.concat(event.target.value+',')})
+    let ingredients = this.state.ingredients,
+      toggledIngredient = event.target.value,
+      indexOfIngredient = ingredients.indexOf(toggledIngredient);
+
+    if (indexOfIngredient > -1) {
+      ingredients.splice( indexOfIngredient, 1 );
+    } else {
+      ingredients.push(toggledIngredient);
+    }
+    this.setState({ingredients: ingredients});
   }
 
   render() {
