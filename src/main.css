@@ -271,7 +271,6 @@ a:link {
 
 /* #endregion */
 
-
 /* #region drinks-cabinet */
 
 .in-cabinet {
@@ -290,7 +289,7 @@ a:link {
   font-size: 20px;
 }
 
-.drinks-cabinet-list-item:nth-child(odd) {
+.drinks-cabinet-list-item:nth-of-type(odd) {
   background: #e0e0e0;
 }
 

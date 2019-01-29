@@ -27,7 +27,7 @@ class DrinksCabinetCocktailsPage extends Component {
 
     return (
       <div className='drinks-cabinet-cocktails-page'>
-        <CocktailList data={this.state.cabinetIngredients.join(',')} noInitialRender='true' />
+        <CocktailList data={this.state.cabinetIngredients} noInitialRender='true' />
       </div>
     )
   }
