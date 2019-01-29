@@ -5,7 +5,7 @@ class Home extends Component {
   static go() {
     return (
       <div id='home'>
-        <div className='heading'>Welcome to Chin&nbsp;Chin</div><br/>
+        <div className='top-heading'>Welcome to Chin&nbsp;Chin</div>
         <div className='body-text'>Chin Chin is your knowledgable guide on your
           foray into the world of cocktail making. It was inspired by the idea
           of being able to find out which cocktails you can make with the
