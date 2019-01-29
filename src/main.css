@@ -115,13 +115,57 @@ a:link {
 
 /* #region filter */
 
+.collapse-menu {
+  float: right;
+  font-weight: bold;
+  font-style: italic;
+  color: #ef845a
+}
+
+.show-filters-menu {
+  display: inline;
+}
+
+.collapse-filter-menu {
+  display: none;
+}
+
+.ingredient-category {
+  font-weight: bold;
+}
+
+.spirit {
+  margin: 5px 5px 5px 10px
+}
+
 #filters {
-  padding-top: 60px;
+  padding: 80px 20px 10px;
+  height: auto;
+  background-color: #888888;
+  text-align: right;
 }
 
 #filter-items {
+  text-align: left;
   width: 100%;
-  background-color: #888888
+}
+
+#filter-bar {
+  width: 100%;
+  font-weight: bold;
+  font-style: italic;
+  color: #ef845a
+}
+
+#no-results {
+  width: 100%;
+  padding-top: 100px;
+  text-align: center;
+  font-size: 1.5em
+}
+
+#max-missing-input {
+  width: 2em
 }
 
 /* #endregion */

@@ -7,8 +7,19 @@ class CocktailList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      cocktails: []
+      cocktails: null
     };
+  }
+
+  componentWillMount() {
+    fetch('https://chinchinapi.herokuapp.com/cocktails/all')
+    .then(res => res.json())
+    .then(result => {
+        this.setState({
+          cocktails: result
+        });
+      }
+    )
   }
 
   componentDidMount() {
@@ -25,35 +36,42 @@ class CocktailList extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (nextProps.data === '') {
-      fetch('https://chinchinapi.herokuapp.com/cocktails/all')
-        .then(res => res.json())
-        .then(result => {
-            this.setState({
-              cocktails: result
-            });
-          }
-        )
+    let url;
+    if (nextProps.data.ingredients.length === 0) {
+      url = 'https://chinchinapi.herokuapp.com/cocktails/all';
+    } else {
+      url = 'https://chinchinapi.herokuapp.com/cocktails/filter/by-ingredient/' + nextProps.data.ingredients;
+      if (!!nextProps.data.maxMissing) {
+        url += '/' + nextProps.data.maxMissing
+      }
     }
-    else {
-      fetch('https://chinchinapi.herokuapp.com/cocktails/filter/by-ingredient/' + nextProps.data)
-        .then(res => res.json())
-        .then(result => {
-            this.setState({
-              cocktails: result
-            });
-          }
-        )
-    }
+    fetch(url)
+      .then(res => res.json())
+      .then(result => {
+          this.setState({
+            cocktails: result
+          });
+        }
+      )
   }
 
   render() {
-    let { cocktails } = this.state;
+    let { cocktails } = this.state,
+      display;
+
+    if (!cocktails) {
+      display = null;
+    } else if (cocktails.length > 0) {
+      display = cocktails.map(cocktail => {
+        return <CocktailListItem cocktail={cocktail} />
+      })
+    } else {
+      display = <div id='no-results'>No cocktails were found that meet your selected criteria</div>
+    }
+    
     return (
       <div id="flex-container">
-        {cocktails.map(cocktail => {
-          return <CocktailListItem cocktail={cocktail} />
-        })}
+        {display}
       </div>
     );
   }
