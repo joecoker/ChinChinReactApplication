@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { withRouter } from 'react-router';
 import AuthService from './AuthService';
+// eslint-disable-next-line
 import Notifications, {notify} from 'react-notify-toast';
 
 class SignInBox extends Component {
