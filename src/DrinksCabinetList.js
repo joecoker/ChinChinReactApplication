@@ -11,10 +11,10 @@ class DrinksCabinetList extends Component {
     this.state = {
       allIngredients: [],
       cabinetIngredients: [],
-      spirits: [{"name":"Gin"},{"name":"Vodka"},{"name":"Triple Sec"},{"name":"White Rum"},{"name":"Dark Rum"},{"name":"Cognac"},{"name":"Vermouth"},{"name":"Whiskey"},{"name":"Tequila"},{"name":"Champagne"}],
+      spirits: [{"name":"Gin"},{"name":"Vodka"},{"name":"Triple Sec"},{"name":"White Rum"},{"name":"Dark Rum"},{"name":"Gold Rum"},{"name":"Cognac"},{"name":"Dry Vermouth"},{"name":"Red Vermouth"},{"name":"Whiskey"},{"name":"Irish Whiskey"},{"name":"Rye Whiskey"},{"name":"Bourbon Whiskey"},{"name":"Scotch Whisky"},{"name":"Tequila"},{"name":"Prosecco"},{"name":"Champagne"}],
       mixers: [{"name":"Orange Juice"},{"name":"Pineapple Juice"},{"name":"Cranberry Juice"},{"name":"Lemon Juice"},{"name":"Lime Juice"},{"name":"Cream"}],
-      liqueurs: [{"name":"Coffee Liqueur"},{"name":"Créme Liqueur"},{"name":"Maraschino Cherry Liqueur"},{"name":"Galliano"}],
-      others: [{"name":"Absinthe"},{"name":"Aperol"},{"name":"Apricot Brandy"},{"name":"Blackberry Liqueur"},{"name":"Cachaca"},{"name":"Calvados"},{"name":"Campari"},{"name":"Cherry Liqueur"},{"name":"Coconut Milk"},{"name":"Cola"},{"name":"Cream Liqueur"},{"name":"DiSaronno"},{"name":"DOM Bénédictine"},{"name":"Drambuie"},{"name":"Dry White Wine"},{"name":"Egg Yolk"},{"name":"Ginger Ale"},{"name":"Ginger Beer"},{"name":"Grapefruit Juice"},{"name":"Hot Coffee"},{"name":"Kirsch"},{"name":"Lillet Blonde"},{"name":"Olive Juice"},{"name":"Orange Bitters"},{"name":"Peach Puree"},{"name":"Peach Schnapps"},{"name":"Pisco"},{"name":"Prosecco"},{"name":"Raspberry Liqueur"},{"name":"Red Port"},{"name":"Soda Water"},{"name":"Tomato Juice"},{"name":"Agave Nectar"},{"name":"Angostura Bitters"},{"name":"Bourbon Whiskey"},{"name":"Brown Créme de Cacao"},{"name":"Brown Sugar"},{"name":"Celery Salt"},{"name":"Citron Vodka"},{"name":"Clear Honey"},{"name":"Créme de Cassis"},{"name":"Dry Vermouth"},{"name":"Egg White"},{"name":"Fresh Lime"},{"name":"Fresh Red Hot Chili Peppers"},{"name":"Gold Rum"},{"name":"Gomme Syrup"},{"name":"Green Créme de Menthe"},{"name":"Grenadine Syrup"},{"name":"Irish Cream Liqueur"},{"name":"Irish Whiskey"},{"name":"Mint"},{"name":"Mint leaves"},{"name":"Onion Finely Chopped"},{"name":"Orange Curaçao"},{"name":"Orange Flower Water"},{"name":"Orgeat Syrup"},{"name":"Peach Bitters"},{"name":"Pepper"},{"name":"Peychaud's Bitters"},{"name":"Powdered Sugar"},{"name":"Raspberry Syrup"},{"name":"Red Vermouth"},{"name":"Rye Whiskey"},{"name":"Salt"},{"name":"Scotch Whisky"},{"name":"Short Strong Espresso"},{"name":"Silver Tequila"},{"name":"Strawberry Syrup"},{"name":"Sugar"},{"name":"Sugar Syrup"},{"name":"Sweet Red Vermouth"},{"name":"Tabasco"},{"name":"Vanilla Extract"},{"name":"Water"},{"name":"White Créme de Cacao"},{"name":"Worcestershire Sauce"},{"name":"White Créme de Menthe"}]
+      liqueurs: [{"name":"Coffee Liqueur"},{"name":"Créme Liqueur"},{"name":"Maraschino Cherry Liqueur"},{"name":"DiSaronno"},{"name":"Galliano"}],
+      others: [{"name":"Absinthe"},{"name":"Aperol"},{"name":"Apricot Brandy"},{"name":"Blackberry Liqueur"},{"name":"Cachaca"},{"name":"Calvados"},{"name":"Campari"},{"name":"Coconut Milk"},{"name":"Cola"},{"name":"DOM Bénédictine"},{"name":"Drambuie"},{"name":"Dry White Wine"},{"name":"Egg Yolk"},{"name":"Ginger Ale"},{"name":"Ginger Beer"},{"name":"Grapefruit Juice"},{"name":"Hot Coffee"},{"name":"Kirsch"},{"name":"Lillet Blonde"},{"name":"Olive Juice"},{"name":"Orange Bitters"},{"name":"Peach Puree"},{"name":"Peach Schnapps"},{"name":"Pisco"},{"name":"Raspberry Liqueur"},{"name":"Red Port"},{"name":"Soda Water"},{"name":"Tomato Juice"},{"name":"Agave Nectar"},{"name":"Angostura Bitters"},{"name":"Brown Créme de Cacao"},{"name":"Brown Sugar"},{"name":"Celery Salt"},{"name":"Citron Vodka"},{"name":"Clear Honey"},{"name":"Créme de Cassis"},{"name":"Egg White"},{"name":"Fresh Lime"},{"name":"Fresh Red Hot Chili Peppers"},{"name":"Gomme Syrup"},{"name":"Green Créme de Menthe"},{"name":"Grenadine Syrup"},{"name":"Irish Cream Liqueur"},{"name":"Mint"},{"name":"Mint leaves"},{"name":"Onion Finely Chopped"},{"name":"Orange Curaçao"},{"name":"Orange Flower Water"},{"name":"Orgeat Syrup"},{"name":"Peach Bitters"},{"name":"Pepper"},{"name":"Peychaud's Bitters"},{"name":"Powdered Sugar"},{"name":"Raspberry Syrup"},{"name":"Salt"},{"name":"Short Strong Espresso"},{"name":"Strawberry Syrup"},{"name":"Sugar"},{"name":"Sugar Syrup"},{"name":"Tabasco"},{"name":"Vanilla Extract"},{"name":"Water"},{"name":"White Créme de Cacao"},{"name":"Worcestershire Sauce"},{"name":"White Créme de Menthe"}]
     }
     this.addToCabinet = this.addToCabinet.bind(this);
     this.deleteFromCabinet = this.deleteFromCabinet.bind(this);
@@ -47,23 +47,6 @@ class DrinksCabinetList extends Component {
   }
 
   componentWillMount(){
-    fetch('https://chinchinapi.herokuapp.com/ingredients/all')
-    .then(res => res.json())
-    .then(result => {
-        this.setState({
-          allIngredients: result.sort((a,b) => {
-            if (a.name.toLowerCase() < b.name.toLowerCase()) {
-              return -1;
-            } else if (a.name.toLowerCase() > b.name.toLowerCase()) {
-              return 1;
-            } else {
-              return 0;
-            }
-          })
-        });
-      }
-    )
-
     this.Auth.fetch('https://chinchinapi.herokuapp.com/user/cabinet/view')
     .then(result => {
       this.setState({
