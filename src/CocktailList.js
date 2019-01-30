@@ -12,17 +12,6 @@ class CocktailList extends Component {
   }
 
   componentWillMount() {
-    fetch('https://chinchinapi.herokuapp.com/cocktails/all')
-    .then(res => res.json())
-    .then(result => {
-        this.setState({
-          cocktails: result
-        });
-      }
-    )
-  }
-
-  componentDidMount() {
     if(!this.props.noInitialRender) {
       fetch('https://chinchinapi.herokuapp.com/cocktails/all')
       .then(res => res.json())
@@ -34,7 +23,7 @@ class CocktailList extends Component {
       )
     }
   }
-
+  
   componentWillReceiveProps(nextProps) {
     let url;
     if (nextProps.data.ingredients.length === 0) {
@@ -68,7 +57,7 @@ class CocktailList extends Component {
     } else {
       display = <div id='no-results'>No cocktails were found that meet your selected criteria</div>
     }
-    
+
     return (
       <div id="flex-container">
         {display}
