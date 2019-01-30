@@ -12,6 +12,7 @@ class CocktailList extends Component {
   }
 
   componentWillMount() {
+    window.scrollTo(0, 0)
     if(!this.props.noInitialRender) {
       fetch('https://chinchinapi.herokuapp.com/cocktails/all')
       .then(res => res.json())
@@ -25,8 +26,8 @@ class CocktailList extends Component {
   }
   
   componentWillReceiveProps(nextProps) {
+    window.scrollTo(0, 0)
     let url;
-    console.log(nextProps)
     if (nextProps.data.ingredients.length === 0) {
       url = 'https://chinchinapi.herokuapp.com/cocktails/all';
     } else {

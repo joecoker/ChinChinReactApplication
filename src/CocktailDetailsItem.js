@@ -15,9 +15,9 @@ class CocktailDetailsItem extends Component {
       let garnishString = '';
       this.props.cocktail.garnish.map(function(item, index, array) {
         if (index === (array.length - 1) ) {
-          garnishString += item
+          return garnishString += item
         } else {
-          garnishString += item + ' and ';
+          return garnishString += item + ' and ';
         }
       })
 
@@ -28,8 +28,6 @@ class CocktailDetailsItem extends Component {
 
   render() {
     const cocktail = this.props.cocktail
-    let garnish_elem;
-    let garnish_list = '';
 
     return (
       <div className="indi-cocktail card">
