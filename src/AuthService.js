@@ -93,11 +93,7 @@ export default class AuthService {
         // Setting Authorization header
         // Authorization: Bearer xxxxxxx.xxxxxxxx.xxxxxx
         if (this.loggedIn()) {
-            console.log('logged in route')
-            console.log(`token: ${this.getToken()}`)
             headers['Authorization'] = 'Bearer ' + this.getToken()
-        } else {
-          console.log('not logged in route')
         }
 
         return fetch(url, {
