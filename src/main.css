@@ -35,6 +35,7 @@ a:link {
   height: 60px;
   width: 100%;
   background-color: #444444;
+  z-index: 1;
 }
 
 #hamburger {
@@ -68,7 +69,7 @@ a:link {
 }
 
 #menu {
-  box-shadow: 0 4px 4px 0 #00000080;
+  box-shadow: 4px 4px 4px 0 #00000080;
   border-radius: 0 0 5px 5px;
   width: max-content;
   padding: 5px 22px;
@@ -83,14 +84,6 @@ a:link {
 
 .menu-visible {
   margin-left: 0px;
-}
-
-.hidden {
-  visibility: hidden;
-}
-
-.visible {
-  visibility: visible;
 }
 
 .menu-item {
@@ -125,11 +118,33 @@ a:link {
 
 /* #region filter */
 
-.collapse-menu {
-  float: right;
+#filters {
+  height: 60px;
+}
+
+#filter-bar {
+  position: fixed;
+  top: 70px;
+  right: 10px;
   font-weight: bold;
   font-style: italic;
-  color: #ef845a
+  background-color: #888888;
+  padding: 20px;
+  color: #FFFFFF;
+  border-radius: 5px;
+  box-shadow: 0 4px 4px 0 #00000080;
+}
+
+#filter-items {
+  position: fixed;
+  padding: 0 10px;
+  top: 60px;
+  left: 0;
+  text-align: left;
+  width: 100%;
+  background-color: #888888;
+  box-shadow: 0 4px 4px 0 #00000080;
+  z-index: 0;
 }
 
 .show-filters-menu {
@@ -140,31 +155,67 @@ a:link {
   display: none;
 }
 
-.ingredient-category {
+.collapse-menu {
+  position: relative;
+  top: 15px;
+  right: 5px;
+  height: 0;
+  float: right;
   font-weight: bold;
+  font-style: italic;
+  color: #FFFFFF;
 }
 
-.spirit {
-  margin: 5px 5px 5px 10px
+#spirits, #mixers, #liqueurs {
+  display: inline-block;
+  padding: 5px 20px 0 0;
 }
 
-#filters {
-  padding: 80px 20px 10px;
-  height: auto;
-  background-color: #888888;
+.ingredient-category {
+  font-size: 18px;
+  font-style: italic;
+  color: #FFFFFF;
+  padding: 10px 0 10px 5px;
+}
+
+.spirit-column, .mixer-column, .liqueurs-column {
+  display: inline-block;
+  vertical-align: top;
+  padding-right: 15px;
+}
+
+#max-missing {
+  display: inline-block;
+  font-size: 16px;
+  width: 240px;
+  font-style: italic;
+  color: #FFFFFF;
+  padding: 10px 0 10px 5px;
+}
+
+#max-missing-input {
+  border: none;
+  border-radius: 5px;
+  height: 25px;
+  width: 30px;
+  font-size: 13px;
   text-align: right;
 }
 
-#filter-items {
-  text-align: left;
-  width: 100%;
+.filter-buttons {
+  background-color: #444444;
+  border: none;
+  height: 25px;
+  border-radius: 5px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 15px;
+  color: #FFFFFF;
+  font-style: italic;
+  margin-bottom: 10px;
 }
 
-#filter-bar {
-  width: 100%;
-  font-weight: bold;
-  font-style: italic;
-  color: #ef845a
+.left-filter-button {
+  margin-right: 10px;
 }
 
 #no-results {
@@ -172,10 +223,6 @@ a:link {
   padding-top: 100px;
   text-align: center;
   font-size: 1.5em
-}
-
-#max-missing-input {
-  width: 2em
 }
 
 /* #endregion */
@@ -197,6 +244,7 @@ a:link {
   transition: background-color 1s ease;
   display: inline-block;
   width: 250px;
+  padding-bottom: 15px;
   text-align: center;
 }
 
@@ -226,9 +274,14 @@ a:link {
 }
 
 .name {
-  padding-bottom: 15px;
   font-size: 20px;
   color: black;
+}
+
+.missing {
+  padding: 5px 10px 0 10px;
+  font-size: 15px;
+  color: #444444
 }
 
 /* #endregion */
@@ -329,7 +382,7 @@ a:link {
 
 .drinks-cabinet-page {
   padding: 80px 65px;
-  max-width: 600px;
+  max-width: 800px;
 }
 
 .cabinet-button {
@@ -339,7 +392,7 @@ a:link {
   border: 0;
   border-radius: 10px;
   height: 50px;
-  width: 48%;
+  width: 48.3%;
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-size: 20px;
   color: #FFFFFF;
@@ -403,20 +456,11 @@ a:link {
     margin-right: 0;
   }
 
+  #spirits, #mixers, #liqueurs {
+    padding-right: 0px;
+  }
+
+  .spirit-column, .mixer-column, .liqueurs-column {
+    padding-right: 10px;
+  }
 }
-
-  /* .cocktail-item {
-    width: 176px;
-  }
-
-  .image-container, .thumbnail {
-    height: 140px;
-  }
-
-  .thumbnail {
-    width: 140px;
-  }
-
-  .image-container, .thumbnail {
-    margin: 9px;
-  } */
