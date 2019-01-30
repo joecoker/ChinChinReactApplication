@@ -10,17 +10,16 @@ class DrinksCabinetCocktailsPage extends Component {
     super();
     this.Auth = new AuthService();
     this.state = {
-      cabinetIngredients: [],
-      only: match.match.params.param === 'only' ? '/0' : ''
+      ingredients: [],
+      maxMissing: match.match.params.param === 'only' ? '0' : null
     }
-    console.log();
   }
 
   componentDidMount(){
     this.Auth.fetch('https://chinchinapi.herokuapp.com/user/cabinet/view')
     .then(result => {
       this.setState({
-        cabinetIngredients: result.cabinetIngredients
+        ingredients: result.cabinetIngredients
       })
     })
   }
@@ -29,9 +28,7 @@ class DrinksCabinetCocktailsPage extends Component {
 
     return (
       <div className='drinks-cabinet-cocktails-page'>
-        <CocktailList data={
-          this.state.cabinetIngredients + this.state.only
-        } noInitialRender='true' />
+        <CocktailList data={this.state} noInitialRender='true' />
       </div>
     )
   }
