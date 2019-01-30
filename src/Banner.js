@@ -50,15 +50,28 @@ class Banner extends Component {
     return (
       <div id='banner'>
         <div id='hamburger' onClick={this.handleClick}><i className={this.state.isVisible ? 'fas fa-times' : 'fas fa-bars'} /></div>
-        <img id='logo' src='/negroni.ico' alt='Chin Chin logo'></img>
-        <div id='chin-chin'>Chin Chin</div>
+        <Link to={homeAdd}>
+          <img id='logo' src='/negroni.ico' alt='Chin Chin logo'></img>
+          <div id='chin-chin'>Chin Chin</div>
+        </Link>
         <div id='menu' className={this.state.isVisible ? 'menu-visible' : 'menu-hidden'}>
-          <Link to={homeAdd}><div className='menu-item'><span className='menu-icon'><i className='fas fa-home' /></span> Home</div></Link>
-          <Link to={cocktailsAdd}><div className='menu-item'><span className='menu-icon'><i className='fas fa-cocktail' /></span> Cocktails</div></Link>
-          {!loggedIn && <Link to={signInAdd}><div className='menu-item'><span className='menu-icon'><i className='fas fa-sign-in-alt' /></span> Sign In</div></Link>}
-          {!loggedIn && <Link to={signUpAdd}><div className='menu-item'><span className='menu-icon'><i className='fas fa-user-plus' /></span> Sign Up</div></Link>}
-          {loggedIn && <Link to={drinksCabinetAdd}><div className='menu-item'><span className='menu-icon'><i className='fas fa-wine-bottle' /></span> My Drinks Cabinet</div></Link>}
-          {loggedIn && <Link to={signOutAdd}><div className='menu-item'><span className='menu-icon'><i className='fas fa-sign-out-alt' /></span> Sign Out</div></Link>}
+          <Link to={homeAdd}><div className='menu-item'><span className='menu-icon'><i className='fas fa-home' /></span>Home</div></Link>
+          <Link to={cocktailsAdd}><div className='menu-item'><span className='menu-icon'><i className='fas fa-cocktail' /></span>Cocktails</div></Link>
+          {!loggedIn && <Link to={signInAdd}><div className='menu-item'><span className='menu-icon'><i className='fas fa-sign-in-alt' /></span>Sign In</div></Link>}
+          {!loggedIn && <Link to={signUpAdd}><div className='menu-item'><span className='menu-icon'><i className='fas fa-user-plus' /></span>Sign Up</div></Link>}
+          {loggedIn && <Link to={drinksCabinetAdd}><div className='menu-item'><span className='menu-icon'><i className='fas fa-wine-bottle' /></span>My Drinks Cabinet</div></Link>}
+          {loggedIn && <Link to={signOutAdd}><div className='menu-item'><span className='menu-icon'><i className='fas fa-sign-out-alt' /></span>Sign Out</div></Link>}
+          <div className='menu-seperator' />
+          <a href='https://makers.tech/'><div className='menu-item smaller'><span className='menu-icon'><img src='/assets/makers.svg' height='16' width='16' /></span>A <strong>Makers Academy</strong> final project</div></a>
+          <a href='https://github.com/StuAA78'><div className='menu-item smaller'><span className='menu-icon'><i className='fab fa-github' /></span>Stuart Adair</div></a>
+          <a href='https://github.com/joecoker'><div className='menu-item smaller'><span className='menu-icon'><i className='fab fa-github' /></span>Joe Coker</div></a>
+          <a href='https://github.com/Vaent'><div className='menu-item smaller'><span className='menu-icon'><i className='fab fa-github' /></span>Al Eccles</div></a>
+          <a href='https://github.com/alittlecross'><div className='menu-item smaller'><span className='menu-icon'><i className='fab fa-github' /></span>Paul Fazackerley</div></a>
+          <a href='https://github.com/DGajewska'><div className='menu-item smaller'><span className='menu-icon'><i className='fab fa-github' /></span>Dana Gajewska</div></a>
+          <div className='menu-seperator' />
+          <div className='menu-item smaller'><span className='menu-icon'></span>Developed using:</div>
+          <a href='https://nodejs.org/'><div className='menu-item smaller'><span className='menu-icon'><i className='fab fa-node-js' /></span>Node.js</div></a>
+          <a href='https://reactjs.org/'><div className='menu-item smaller'><span className='menu-icon'><i className='fab fa-react' /></span>React</div></a>
         </div>
       </div>
     )
