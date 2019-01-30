@@ -21,6 +21,7 @@ class App extends Component {
         <div>
           <Banner />
           <Notifications />
+          <div id='gradient' />
           <div id='page-content'>
             <Route exact path="/" component={Home.go} />
             <Route exact path="/cocktails/all" component={CocktailsAll} />

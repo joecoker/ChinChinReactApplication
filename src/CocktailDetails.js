@@ -25,7 +25,7 @@ import React, { Component } from 'react';
     render() {
 	    const { cocktail } = this.state;
 	    return (
-	      <div>
+	      <div className='cocktail-details-parent'>
 	      {cocktail.map(cocktail => {
 	        return <CocktailDetailsItem cocktail={cocktail} />
 	      })}

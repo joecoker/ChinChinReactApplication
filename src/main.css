@@ -13,11 +13,19 @@ body {
   min-height: 100%;
   padding: 0;
   font-family: Georgia, 'Times New Roman', Times, serif;
-  background-attachment: fixed;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+#gradient {
+  background-attachment: initial;
   background-color: #ef845a;
   background-image: linear-gradient(#ef845a, #cd324c);
+  background-size: auto 100vh;
+  position: fixed;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
 }
 
 a:link {
@@ -235,11 +243,15 @@ a:link {
 
 /* #region single cocktail */
 
+.cocktail-details-parent {
+  padding-top: 100px;
+}
+
 .indi-cocktail {
   flex-wrap: wrap;
   display: flex;
   padding: 30px 30px;
-  margin: 100px auto;
+  margin: auto auto;
   width: fit-content;
 }
 
@@ -259,17 +271,24 @@ a:link {
   font-weight: bold;
 }
 
-@media screen and (max-width: 540px) {
+@media screen and (max-width: 860px) {
+
+  .cocktail-details-parent {
+    padding-top: 80px;
+    margin-bottom: 20px;
+  }
 
   #cocktail-image, #cocktail-details {
     width: 275px;
     margin: 0 auto;
-    padding: 25px 0 0 0;
+    padding: 10px 0;
   }
 
   .indi-cocktail {
+    width: 90%;
     padding: 10px 10px;
-    margin: 70px 10px;
+    flex-wrap: nowrap;
+    display: block;
   }
 
   .full-size {
@@ -377,7 +396,7 @@ a:link {
 }
 
 .section {
-  margin-bottom: 25px; 
+  margin-bottom: 25px;
 }
 
 .section-header {
