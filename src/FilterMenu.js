@@ -72,7 +72,7 @@ class FilterMenu extends Component {
               <div className='spirit-column'>
                 <input type='checkbox' className='spirit' value='Dark Rum' onChange={this.handleChange} />Dark Rum<br/>
                 <input type='checkbox' className='spirit' value='Cognac' onChange={this.handleChange} />Cognac<br/>
-                <input type='checkbox' className='spirit' value='Vermouth' onChange={this.handleChange} />Vermouth
+                <input type='checkbox' className='spirit' value='Dry Vermouth' onChange={this.handleChange} />Dry Vermouth
               </div>
               <div className='spirit-column'>
                 <input type='checkbox' className='spirit' value='Whiskey' onChange={this.handleChange} />Whiskey<br/>
