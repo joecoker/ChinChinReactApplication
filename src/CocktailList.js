@@ -37,6 +37,7 @@ class CocktailList extends Component {
 
   componentWillReceiveProps(nextProps) {
     let url;
+    console.log(nextProps)
     if (nextProps.data.ingredients.length === 0) {
       url = 'https://chinchinapi.herokuapp.com/cocktails/all';
     } else {
@@ -68,7 +69,7 @@ class CocktailList extends Component {
     } else {
       display = <div id='no-results'>No cocktails were found that meet your selected criteria</div>
     }
-    
+
     return (
       <div id="flex-container">
         {display}
