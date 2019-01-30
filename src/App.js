@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import Banner from './Banner';
 import Notifications from 'react-notify-toast';
 import Home from './Home'
-import CocktailSingle from './CocktailSingle'
+import CocktailDetails from './CocktailDetails'
 import CocktailsAll from './CocktailsAll'
 import SignInPage from './SignInPage'
 import SignUpPage from './SignUpPage'
@@ -24,7 +24,7 @@ class App extends Component {
           <div id='page-content'>
             <Route exact path="/" component={Home.go} />
             <Route exact path="/cocktails/all" component={CocktailsAll} />
-            <Route path="/cocktail/:name" component={CocktailSingle.go} />
+            <Route path="/cocktail/:name" component={CocktailDetails} />
             <Route exact path="/sign-in" component={SignInPage.go} />
             <Route exact path="/sign-up" component={SignUpPage.go} />
             <Route exact path="/drinks-cabinet" component={DrinksCabinetPage.go} />
