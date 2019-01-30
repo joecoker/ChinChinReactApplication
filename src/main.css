@@ -13,11 +13,11 @@ body {
   min-height: 100%;
   padding: 0;
   font-family: Georgia, 'Times New Roman', Times, serif;
-  background-color: #ef845a;
-  background-image: linear-gradient(#ef845a, #cd324c);
   background-attachment: fixed;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #ef845a;
+  background-image: linear-gradient(#ef845a, #cd324c);
 }
 
 a:link {
@@ -71,8 +71,18 @@ a:link {
   box-shadow: 0 4px 4px 0 #00000080;
   border-radius: 0 0 5px 5px;
   width: max-content;
-  padding: 5px 25px;
+  padding: 5px 22px;
   background-color: #444444;
+  transition: all 0.5s ease;
+  height: 100vh;
+}
+
+.menu-hidden {
+  margin-left: -248px;
+}
+
+.menu-visible {
+  margin-left: 0px;
 }
 
 .hidden {
