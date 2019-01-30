@@ -238,17 +238,44 @@ a:link {
 .indi-cocktail {
   flex-wrap: wrap;
   display: flex;
-  padding: 60px 10px;
+  padding: 30px 30px;
+  margin: 100px auto;
+  width: fit-content;
 }
 
-#picture-padding, #cocktail-details {
-  padding: 20px 15px 0 15px;
+#cocktail-image, #cocktail-details {
+  vertical-align: top;
+  padding: 0 15px;
+  width: 400px;
 }
 
 .full-size {
   border-radius: 10px;
   width: 350px;
   height: 350px;
+}
+
+.item-title {
+  font-weight: bold;
+}
+
+@media screen and (max-width: 540px) {
+
+  #cocktail-image, #cocktail-details {
+    width: 275px;
+    margin: 0 auto;
+    padding: 25px 0 0 0;
+  }
+
+  .indi-cocktail {
+    padding: 10px 10px;
+    margin: 70px 10px;
+  }
+
+  .full-size {
+    width: 100%;
+    height: auto;
+  }
 }
 
 /* #endregion */
