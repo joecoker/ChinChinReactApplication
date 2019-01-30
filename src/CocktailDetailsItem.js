@@ -20,21 +20,21 @@ class CocktailDetailsItem extends Component {
     }
 
     return (
-      <div class="indi-cocktail">
-        <div id='picture-padding'><img class="full-size" src={"https://s3.eu-west-2.amazonaws.com/chinchinreact/full-size/" + this.props.cocktail.pictureUrl } alt={this.props.cocktail.name} /></div>
+      <div className="indi-cocktail card">
+        <div id='cocktail-image'><img className="full-size" src={"https://s3.eu-west-2.amazonaws.com/chinchinreact/full-size/" + this.props.cocktail.pictureUrl } alt={this.props.cocktail.name} /></div>
         <div id='cocktail-details'>
-          <div class='top-heading'>{cocktail.name}</div><br/>
-          <div class='heading'>Glass:<span> {cocktail.glass}</span></div>
-          <div class='heading'>Category:<span> {cocktail.category}</span></div><br/>
-          <div class='heading'>Ingredients:</div>
+          <div className='top-heading'>{cocktail.name}</div><br/>
+          <div className='heading'><span className='item-title'>Glass:</span><span> {cocktail.glass}</span></div>
+          <div className='heading'><span className='item-title'>Category:</span><span> {cocktail.category}</span></div><br/>
+          <div className='heading'><span className='item-title'>Ingredients:</span></div>
           <ul>{cocktail.ingredients.map(function(ingredient) {
             return <li>{ingredient.amount} {ingredient.unit} {ingredient.ingredient.name}</li>
           })}
           {garnish_elem}
           </ul>
           <br/>
-          <div class='heading'>Method:</div>
-          <div>{cocktail.preparation}</div>
+          <div className='heading'><span className='item-title'>Method:</span></div>
+          <div className='method'>{cocktail.preparation}</div>
           </div>
       </div>
 
