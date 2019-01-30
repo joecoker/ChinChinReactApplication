@@ -59,40 +59,40 @@ class FilterMenu extends Component {
   render() {
     return (
       <div id='filters'>
-        <div id='filter-bar' class={this.state.isVisible ? 'collapse-filter-menu' : 'show-filters-menu'} onClick={this.toggleFilterMenu} >
+        <div id='filter-bar' className={this.state.isVisible ? 'collapse-filter-menu' : 'show-filters-menu'} onClick={this.toggleFilterMenu} >
           <span id='filter-clicker'>Filter</span>
         </div>
-          <div id='filter-items' class={this.state.isVisible ? 'show-filters-menu' : 'collapse-filter-menu'}>
+          <div id='filter-items' className={this.state.isVisible ? 'show-filters-menu' : 'collapse-filter-menu'}>
             <form onSubmit={this.handleFormSubmit}>
               <div id='spirits'>
-              <span class='ingredient-category'>Spirits</span>
-              <span class='collapse-menu' onClick={this.toggleFilterMenu}>Collapse</span><br/>
-                <input type='checkbox' class='spirit' value='Gin' onChange={this.handleChange} />Gin
-                <input type='checkbox' class='spirit' value='Vodka' onChange={this.handleChange} />Vodka
-                <input type='checkbox' class='spirit' value='Triple Sec' onChange={this.handleChange} />Triple Sec
-                <input type='checkbox' class='spirit' value='White Rum' onChange={this.handleChange} />White Rum
-                <input type='checkbox' class='spirit' value='Dark Rum' onChange={this.handleChange} />Dark Rum
-                <input type='checkbox' class='spirit' value='Cognac' onChange={this.handleChange} />Cognac
-                <input type='checkbox' class='spirit' value='Vermouth' onChange={this.handleChange} />Vermouth
-                <input type='checkbox' class='spirit' value='Whiskey' onChange={this.handleChange} />Whiskey
-                <input type='checkbox' class='spirit' value='Tequila' onChange={this.handleChange} />Tequila
-                <input type='checkbox' class='spirit' value='Champagne' onChange={this.handleChange} />Champagne
+              <span className='ingredient-category'>Spirits</span>
+              <span className='collapse-menu' onClick={this.toggleFilterMenu}>Collapse</span><br/>
+                <input type='checkbox' className='spirit' value='Gin' onChange={this.handleChange} />Gin
+                <input type='checkbox' className='spirit' value='Vodka' onChange={this.handleChange} />Vodka
+                <input type='checkbox' className='spirit' value='Triple Sec' onChange={this.handleChange} />Triple Sec
+                <input type='checkbox' className='spirit' value='White Rum' onChange={this.handleChange} />White Rum
+                <input type='checkbox' className='spirit' value='Dark Rum' onChange={this.handleChange} />Dark Rum
+                <input type='checkbox' className='spirit' value='Cognac' onChange={this.handleChange} />Cognac
+                <input type='checkbox' className='spirit' value='Vermouth' onChange={this.handleChange} />Vermouth
+                <input type='checkbox' className='spirit' value='Whiskey' onChange={this.handleChange} />Whiskey
+                <input type='checkbox' className='spirit' value='Tequila' onChange={this.handleChange} />Tequila
+                <input type='checkbox' className='spirit' value='Champagne' onChange={this.handleChange} />Champagne
               </div>
               <div id='mixers'>
-              <div class='ingredient-category'>Mixers</div>
-                <input type='checkbox' class='spirit' value='Orange Juice' onChange={this.handleChange} />Orange Juice
-                <input type='checkbox' class='spirit' value='Pineapple Juice' onChange={this.handleChange} />Pineapple Juice
-                <input type='checkbox' class='spirit' value='Cranberry Juice' onChange={this.handleChange} />Cranberry Juice
-                <input type='checkbox' class='spirit' value='Lemon Juice' onChange={this.handleChange} />Lemon Juice
-                <input type='checkbox' class='spirit' value='Lime Juice' onChange={this.handleChange} />Lime Juice
-                <input type='checkbox' class='spirit' value='Cream' onChange={this.handleChange} />Cream
+              <div className='ingredient-category'>Mixers</div>
+                <input type='checkbox' className='spirit' value='Orange Juice' onChange={this.handleChange} />Orange Juice
+                <input type='checkbox' className='spirit' value='Pineapple Juice' onChange={this.handleChange} />Pineapple Juice
+                <input type='checkbox' className='spirit' value='Cranberry Juice' onChange={this.handleChange} />Cranberry Juice
+                <input type='checkbox' className='spirit' value='Lemon Juice' onChange={this.handleChange} />Lemon Juice
+                <input type='checkbox' className='spirit' value='Lime Juice' onChange={this.handleChange} />Lime Juice
+                <input type='checkbox' className='spirit' value='Cream' onChange={this.handleChange} />Cream
               </div>
               <div id='liqueurs'>
-              <div class='ingredient-category'>Liqueurs</div>
-                <input type='checkbox' class='spirit' value='Coffee Liqueur' onChange={this.handleChange} />Coffee Liqueur
-                <input type='checkbox' class='spirit' value='Créme Liqueur' onChange={this.handleChange} />Créme Liqueur
-                <input type='checkbox' class='spirit' value='Maraschino Cherry Liqueur' onChange={this.handleChange} />Maraschino Cherry Liqueur
-                <input type='checkbox' class='spirit' value='Galliano' onChange={this.handleChange} />Galliano
+              <div className='ingredient-category'>Liqueurs</div>
+                <input type='checkbox' className='spirit' value='Coffee Liqueur' onChange={this.handleChange} />Coffee Liqueur
+                <input type='checkbox' className='spirit' value='Créme Liqueur' onChange={this.handleChange} />Créme Liqueur
+                <input type='checkbox' className='spirit' value='Maraschino Cherry Liqueur' onChange={this.handleChange} />Maraschino Cherry Liqueur
+                <input type='checkbox' className='spirit' value='Galliano' onChange={this.handleChange} />Galliano
               </div>
               <div>
                 <input id='max-missing-input' type='number' onChange={this.handleNumber} />Maximum number of missing ingredients in each recipe
