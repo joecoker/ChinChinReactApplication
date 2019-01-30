@@ -327,6 +327,46 @@ a:link {
 
 /* #region drinks-cabinet */
 
+.drinks-cabinet-page {
+  padding: 80px 65px;
+  max-width: 600px;
+}
+
+.cabinet-button {
+  background: #888888;
+  margin-bottom: 20px;
+  padding: 0px;
+  border: 0;
+  border-radius: 10px;
+  height: 50px;
+  width: 48%;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 20px;
+  color: #FFFFFF;
+}
+
+.left-button {
+  margin-right: 20px;
+}
+
+.section {
+  margin-bottom: 25px; 
+}
+
+.section-header {
+  height: 30px;
+  vertical-align: top;
+  color: #444444;
+  font-style: italic;
+  text-align: center;
+}
+
+.drinks-cabinet-list {
+  padding: 25px;
+  line-height: 20px;
+  font-size: 20px;
+}
+
 .in-cabinet {
   color: #00FF00;
 }
@@ -335,13 +375,6 @@ a:link {
   color: #FF00FF;
 }
 
-.drinks-cabinet-list {
-  width: 75%;
-  margin: 100px;
-  padding: 25px;
-  line-height: 30px;
-  font-size: 20px;
-}
 
 .drinks-cabinet-list-item:nth-of-type(odd) {
   background: #e0e0e0;
@@ -354,19 +387,25 @@ a:link {
   background: none;
 }
 
-.drinks-cabinet-page {
-  padding-top: 160px;
-}
-
 .drinks-cabinet-cocktails-page {
-  padding-top: 160px;
+  padding: 90px 65px;
 }
 
 /* #endregion */
 
-/* @media screen and (max-width: 540px) {
+@media screen and (max-width: 729px) {
 
-  .cocktail-item {
+  .cabinet-button {
+    width: 100%;
+  }
+
+  .left-button {
+    margin-right: 0;
+  }
+
+}
+
+  /* .cocktail-item {
     width: 176px;
   }
 
@@ -380,5 +419,4 @@ a:link {
 
   .image-container, .thumbnail {
     margin: 9px;
-  }
-} */
+  } */

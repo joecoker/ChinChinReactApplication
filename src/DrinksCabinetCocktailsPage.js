@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-
-import DrinksCabinetList from './DrinksCabinetList';
 import AuthService from './AuthService';
 import CocktailList from './CocktailList';
 

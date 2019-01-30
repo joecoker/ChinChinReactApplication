@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import { withRouter } from 'react-router';
 import AuthService from './AuthService';
 
@@ -33,10 +32,11 @@ class DrinksCabinetList extends Component {
       })
 
       return temp.map((ingredient) => {
+        let divContent;
         if (this.state.cabinetIngredients.includes(ingredient.name)) {
-          var divContent = <button onClick={this.deleteFromCabinet.bind(this, ingredient.name)} className='star-button'><i className="fas fa-star" /></button>
+          divContent = <button onClick={this.deleteFromCabinet.bind(this, ingredient.name)} className='star-button'><i className="fas fa-star" /></button>
         } else {
-          var divContent = <button onClick={this.addToCabinet.bind(this, ingredient.name)} className='star-button'><i className="far fa-star" /></button>
+          divContent = <button onClick={this.addToCabinet.bind(this, ingredient.name)} className='star-button'><i className="far fa-star" /></button>
         }
         return (
           <div className='drinks-cabinet-list-item'>
@@ -105,13 +105,13 @@ class DrinksCabinetList extends Component {
   render() {
     return (
         <div className='drinks-cabinet-list card'>
-        <div className='section'>Popular Spirits
+        <div className='section'><div className='section-header'>Popular Spirits</div>
           {this.constructList(this.state.spirits)}</div>
-        <div className='section'>Popular Mixers
+        <div className='section'><div className='section-header'>Popular Mixers</div>
           {this.constructList(this.state.mixers)}</div>
-        <div className='section'>Popular Liqueurs
+        <div className='section'><div className='section-header'>Popular Liqueurs</div>
           {this.constructList(this.state.liqueurs)}</div>
-        <div className='section'>Others
+        <div className='section'><div className='section-header'>Others</div>
           {this.constructList(this.state.others)}</div>
         </div>
     )

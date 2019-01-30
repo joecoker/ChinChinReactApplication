@@ -8,8 +8,8 @@ class DrinksCabinetPage extends Component {
   static go() {
     return (
       <div className='drinks-cabinet-page'>
-        <Link to='/drinks-cabinet-cocktails'><button>See cocktails I could make</button></Link>
-        <Link to='/drinks-cabinet-cocktails/only'><button>See only cocktails I can make</button></Link>
+        <Link to='/drinks-cabinet-cocktails'><button className='cabinet-button left-button card'>Ingredients required...</button></Link>
+        <Link to='/drinks-cabinet-cocktails/only'><button className='cabinet-button card'>Ready to make...</button></Link>
         <DrinksCabinetList />
       </div>
     )
