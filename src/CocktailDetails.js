@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
-	
+
 	import CocktailDetailsItem from './CocktailDetailsItem';
-	
+
 	class CocktailDetails extends Component {
-	
+
 	  constructor(props) {
 	    super(props);
 	    this.state = {
 	      cocktail: []
 			};
 		}
-	
+
 	  componentDidMount() {
-	    fetch('https://chinchinapi.herokuapp.com/cocktails/name/' + this.props.name)
+	    fetch('https://chinchinapi.herokuapp.com/cocktails/name/' + this.props.match.params.name)
 	      .then(res => res.json())
 	      .then(result => {
 	          this.setState({
@@ -21,11 +21,11 @@ import React, { Component } from 'react';
 	        }
 	      )
 	  }
-      
+
     render() {
 	    const { cocktail } = this.state;
 	    return (
-	      <div>
+	      <div className='cocktail-details-parent'>
 	      {cocktail.map(cocktail => {
 	        return <CocktailDetailsItem cocktail={cocktail} />
 	      })}
@@ -33,5 +33,5 @@ import React, { Component } from 'react';
 	    )
 	  }
 	}
-	
+
 	export default CocktailDetails;

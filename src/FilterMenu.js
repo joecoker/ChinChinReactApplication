@@ -54,8 +54,7 @@ class FilterMenu extends Component {
 
   render() {
     return (
-      <div id='filters'>
-        
+      <div id='filters'>        
         <div id='filter-bar' className={this.state.isVisible ? 'collapse-filter-menu' : 'show-filters-menu'} onClick={this.toggleFilterMenu} >
           Filter
         </div>
