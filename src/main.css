@@ -243,9 +243,10 @@ a:link {
   width: fit-content;
 }
 
-#picture-padding, #cocktail-details {
+#cocktail-image, #cocktail-details {
   vertical-align: top;
   padding: 0 15px;
+  width: 400px;
 }
 
 .full-size {
@@ -261,18 +262,19 @@ a:link {
 @media screen and (max-width: 540px) {
 
   #cocktail-image, #cocktail-details {
-    width: 90%;
+    width: 275px;
     margin: 0 auto;
+    padding: 25px 0 0 0;
   }
 
   .indi-cocktail {
     padding: 10px 10px;
-    margin: 70px 10px 10px;
+    margin: 70px 10px;
   }
 
   .full-size {
-    width: 300px;
-    height: 300px;
+    width: 100%;
+    height: auto;
   }
 }
 
