@@ -17,6 +17,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+a:link {
+  text-decoration: none;
+}
+
 #gradient {
   background-attachment: initial;
   background-color: #ef845a;
@@ -26,10 +30,6 @@ body {
   z-index: -1;
   height: 100%;
   width: 100%;
-}
-
-a:link {
-  text-decoration: none;
 }
 
 /* #endregion */
@@ -271,12 +271,10 @@ a:link {
   margin: 25px 25px 14px 25px;
   border-radius: 10px;
   height: 200px;
-  background-color: #444444;
 }
 
 .thumbnail {
   border-radius: 10px;
-  width: 200px;
   height: 200px;
 
 }
@@ -297,57 +295,38 @@ a:link {
 /* #region single cocktail */
 
 .cocktail-details-parent {
-  padding-top: 100px;
+  padding: 100px 40px;
 }
 
 .indi-cocktail {
   flex-wrap: wrap;
   display: flex;
-  padding: 30px 30px;
-  margin: auto auto;
+  padding: 30px;
+  margin: auto;
   width: fit-content;
+  overflow: hidden;
 }
 
-#cocktail-image, #cocktail-details {
-  vertical-align: top;
-  padding: 0 15px;
-  width: 400px;
+#cocktail-image {
+  margin: 0 auto;
+  max-width: 350px;
+  border-radius: 10px;
 }
 
 .full-size {
-  border-radius: 10px;
+  vertical-align: top;
   width: 350px;
-  height: 350px;
+  border-radius: 10px;
+}
+
+#cocktail-details {
+  vertical-align: top;
+  padding-left: 30px;
+  width: 400px;
 }
 
 .item-title {
   font-weight: bold;
-}
-
-@media screen and (max-width: 860px) {
-
-  .cocktail-details-parent {
-    padding-top: 80px;
-    margin-bottom: 20px;
-  }
-
-  #cocktail-image, #cocktail-details {
-    width: 275px;
-    margin: 0 auto;
-    padding: 10px 0;
-  }
-
-  .indi-cocktail {
-    width: 90%;
-    padding: 10px 10px;
-    flex-wrap: nowrap;
-    display: block;
-  }
-
-  .full-size {
-    width: 100%;
-    height: auto;
-  }
 }
 
 /* #endregion */
@@ -474,7 +453,6 @@ a:link {
   color: #FF00FF;
 }
 
-
 .drinks-cabinet-list-item:nth-of-type(odd) {
   background: #e0e0e0;
 }
@@ -491,6 +469,31 @@ a:link {
 }
 
 /* #endregion */
+
+@media screen and (max-width: 939px) {
+
+  .cocktail-details-parent {
+    padding: 80px 0 20px 0;
+  }
+
+  .indi-cocktail {
+    display: block;
+    width: 80%;
+    padding: 15px;
+  }
+
+  .full-size {
+    padding: 0;
+    width: 100%;
+    height: auto;
+  }
+
+  #cocktail-details {
+    width: 275px;
+    margin: auto;
+    padding: 10px 0;
+  }
+}
 
 @media screen and (max-width: 729px) {
 
