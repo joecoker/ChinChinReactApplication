@@ -44,6 +44,7 @@ class CocktailList extends Component {
       .then(res => res.json())
       .then(result => {
           this.setState({
+            cocktails: result,
             loading: false
           });
         }
