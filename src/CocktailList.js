@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import CocktailListItem from './CocktailListItem';
+import Spinner from './Spinner';
 
 class CocktailList extends Component {
 
@@ -43,7 +44,6 @@ class CocktailList extends Component {
       .then(res => res.json())
       .then(result => {
           this.setState({
-            cocktails: result,
             loading: false
           });
         }
@@ -55,12 +55,15 @@ class CocktailList extends Component {
       display;
 
       if (this.state.loading) {
-        return (<div id='spinner'><i className='fas fa-spinner spinner-animation fa-5x' /></div>)
+        return (<Spinner />)
       }
 
     if (!cocktails) {
       display = null;
     } else if (cocktails.length > 0) {
+      this.setState({
+        loading: false
+      });
       display = cocktails.map(cocktail => {
         return <CocktailListItem cocktail={cocktail} />
       })
