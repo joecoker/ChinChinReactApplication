@@ -79,6 +79,7 @@ a, a:link {
 
 #hamburger {
   display: inline-block;
+  cursor: pointer;
   font-size: 40px;
 }
 
@@ -107,7 +108,6 @@ a, a:link {
 
 #menu {
   transition: all 0.5s ease;
-  box-shadow: 4px 4px 4px 0 #00000080;
   border-radius: 0 0 5px 5px;
   width: max-content;
   padding: 5px 22px;
@@ -180,6 +180,7 @@ a, a:link {
   border-radius: 5px;
   padding: 20px;
   background-color: #888888;
+  cursor: pointer;
   font-weight: bold;
   font-style: italic;
 }
@@ -209,6 +210,7 @@ a, a:link {
   right: 5px;
   float: right;
   height: 0;
+  cursor: pointer;
   font-weight: bold;
   font-style: italic;
 }
@@ -252,6 +254,7 @@ a, a:link {
   margin-bottom: 10px;
   border-radius: 5px;
   height: 25px;
+  cursor: pointer;
   font-size: 15px;
   font-style: italic;
 }
