@@ -156,13 +156,22 @@ a, a:link {
   padding: 90px 65px;
 }
 
+.homepage-text {
+  margin-bottom: 20px;
+  padding: 20px;
+}
+
 .top-heading {
-  padding-bottom: 10px;
+  padding-bottom: 0.5em;
   font-size: 30px;
 }
 
 .body-text {
-  max-width: 750px;
+  font-size: 18px;
+}
+
+.body-text:not(:last-child) {
+  padding-bottom: 1em;
 }
 
 /* #endregion */
