@@ -61,9 +61,6 @@ class CocktailList extends Component {
     if (!cocktails) {
       display = null;
     } else if (cocktails.length > 0) {
-      this.setState({
-        loading: false
-      });
       display = cocktails.map(cocktail => {
         return <CocktailListItem cocktail={cocktail} />
       })
