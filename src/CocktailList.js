@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
 
 import CocktailListItem from './CocktailListItem';
+import Spinner from './Spinner';
 
 class CocktailList extends Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      cocktails: null
+      cocktails: null,
+      loading: true
     };
   }
 
@@ -18,14 +20,16 @@ class CocktailList extends Component {
       .then(res => res.json())
       .then(result => {
           this.setState({
-            cocktails: result
+            cocktails: result,
+            loading: false
           });
         }
       )
     }
   }
-  
+
   componentWillReceiveProps(nextProps) {
+    this.setState({loading: true});
     window.scrollTo(0, 0)
     let url;
     if (nextProps.data.ingredients.length === 0) {
@@ -40,7 +44,8 @@ class CocktailList extends Component {
       .then(res => res.json())
       .then(result => {
           this.setState({
-            cocktails: result
+            cocktails: result,
+            loading: false
           });
         }
       )
@@ -49,6 +54,10 @@ class CocktailList extends Component {
   render() {
     let { cocktails } = this.state,
       display;
+
+      if (this.state.loading) {
+        return (<Spinner />)
+      }
 
     if (!cocktails) {
       display = null;

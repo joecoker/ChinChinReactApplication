@@ -115,16 +115,23 @@ a, a:link {
 }
 
 .menu-hidden {
-  margin-left: -248px;
+  left: 0;
+  position: relative;
+  transform: translateX(-100%);
 }
 
 .menu-visible {
-  margin-left: 0px;
+  transform: translateX(0%);
 }
 
 .menu-item {
   line-height: 40px;
   font-size: 20px;
+}
+
+.smaller {
+  font-size: 16px;
+  line-height: 32px;
 }
 
 .menu-icon {
@@ -277,6 +284,23 @@ a, a:link {
   padding-top: 100px;
   font-size: 1.5em;
   text-align: center;
+}
+
+#spinner {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.spinner-animation {
+    animation: spin 1s linear infinite;
+    color: white;
+}
+
+@keyframes spin {
+    from { transform:rotate(0deg); }
+    to { transform:rotate(360deg); }
 }
 
 /* #endregion */
