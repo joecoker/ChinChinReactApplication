@@ -62,7 +62,7 @@ class Banner extends Component {
           {loggedIn && <Link to={drinksCabinetAdd}><div className='menu-item'><span className='menu-icon'><i className='fas fa-wine-bottle' /></span>My Drinks Cabinet</div></Link>}
           {loggedIn && <Link to={signOutAdd}><div className='menu-item'><span className='menu-icon'><i className='fas fa-sign-out-alt' /></span>Sign Out</div></Link>}
           <div className='menu-seperator' />
-          <a href='https://makers.tech/'><div className='menu-item smaller'><span className='menu-icon'><img src='/assets/makers.svg' height='16' width='16' /></span>A <strong>Makers Academy</strong> final project</div></a>
+          <div className='menu-item smaller'><span className='menu-icon'></span>Developed by:</div>
           <a href='https://github.com/StuAA78'><div className='menu-item smaller'><span className='menu-icon'><i className='fab fa-github' /></span>Stuart Adair</div></a>
           <a href='https://github.com/joecoker'><div className='menu-item smaller'><span className='menu-icon'><i className='fab fa-github' /></span>Joe Coker</div></a>
           <a href='https://github.com/Vaent'><div className='menu-item smaller'><span className='menu-icon'><i className='fab fa-github' /></span>Al Eccles</div></a>
