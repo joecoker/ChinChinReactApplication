@@ -87,11 +87,13 @@ a:link {
 }
 
 .menu-hidden {
-  margin-left: -248px;
+  left: 0;
+  position: relative;
+  transform: translateX(-100%);
 }
 
 .menu-visible {
-  margin-left: 0px;
+  transform: translateX(0%);
 }
 
 .menu-item {
@@ -100,9 +102,32 @@ a:link {
   color: #ffffff;
 }
 
+.smaller {
+  font-size: 16px;
+  line-height: 32px;
+}
+
 .menu-icon {
   display: inline-block;
-  width: 30px;
+  width: 35px;
+}
+
+.menu-seperator {
+  width: 100%;
+  height: 1px;
+  background: #fff;
+  border-top: solid 1px #fff;
+  border-bottom: solid 1px #000;
+  opacity: 0.4;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.menu-text {
+  line-height: 40px;
+  font-size: 20px;
+  color: #ffffff;
+  width: 150px;
 }
 
 /* #endregion */
