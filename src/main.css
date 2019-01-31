@@ -8,28 +8,61 @@ html {
   height: 100%;
 }
 
+body, .filter-buttons, .form, .form input, .form .form-submit, .cabinet-button {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+}
+
 body {
   margin: 0;
   min-height: 100%;
   padding: 0;
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
-a:link {
+a, a:link {
   text-decoration: none;
 }
 
 #gradient {
+  position: fixed;
+  z-index: -1;
+  background-size: auto 100vh;
   background-attachment: initial;
   background-color: #ef845a;
   background-image: linear-gradient(#ef845a, #cd324c);
-  background-size: auto 100vh;
-  position: fixed;
-  z-index: -1;
   height: 100%;
   width: 100%;
+}
+
+#spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.spinner-animation {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from { transform:rotate(0deg); }
+    to { transform:rotate(360deg); }
+}
+
+#banner, #filter-bar, #filter-items {
+  box-shadow: 0 4px 4px 0 #00000080;
+}
+
+.spinner-animation, #hamburger, #chin-chin, .menu-item, .menu-text, #filter-bar, .collapse-menu, 
+.ingredient-category, #max-missing, .filter-buttons, .form .form-submit, .cabinet-button {
+  color: #ffffff
+}
+
+#banner, #menu, .filter-buttons {
+  background-color: #444444;
 }
 
 /* #endregion */
@@ -37,18 +70,15 @@ a:link {
 /* #region banner */
 
 #banner {
-  box-shadow: 0 4px 4px 0 #00000080;
   position: fixed;
-  top: 0;
-  height: 60px;
-  width: 100%;
-  background-color: #444444;
   z-index: 1;
+  top: 0;
+  width: 100%;
+  height: 60px;
 }
 
 #hamburger {
   display: inline-block;
-  color: #ffffff;
   font-size: 40px;
 }
 
@@ -64,8 +94,8 @@ a:link {
 
 #logo {
   display: inline-block;
-  height: 49px;
   margin: 4px 0 7px 0;
+  height: 49px;
   vertical-align: top
 }
 
@@ -73,16 +103,14 @@ a:link {
   display: inline-block;
   padding-left: 8px;
   font-size: 40px;
-  color: #ffffff;
 }
 
 #menu {
+  transition: all 0.5s ease;
   box-shadow: 4px 4px 4px 0 #00000080;
   border-radius: 0 0 5px 5px;
   width: max-content;
   padding: 5px 22px;
-  background-color: #444444;
-  transition: all 0.5s ease;
   height: 100vh;
 }
 
@@ -97,12 +125,27 @@ a:link {
 .menu-item {
   line-height: 40px;
   font-size: 20px;
-  color: #ffffff;
 }
 
 .menu-icon {
   display: inline-block;
-  width: 30px;
+  width: 35px;
+}
+
+.menu-seperator {
+  opacity: 0.4;
+  margin: 8px 0;
+  width: 100%;
+  height: 1px;
+  background-color: #ffffff;
+  border-top: solid 1px #ffffff;
+  border-bottom: solid 1px #000000;
+}
+
+.menu-text {
+  width: 150px;
+  font-size: 20px;
+  line-height: 40px;
 }
 
 /* #endregion */
@@ -114,8 +157,8 @@ a:link {
 }
 
 .top-heading {
-  font-size: 30px;
   padding-bottom: 10px;
+  font-size: 30px;
 }
 
 .body-text {
@@ -134,25 +177,22 @@ a:link {
   position: fixed;
   top: 70px;
   right: 10px;
+  border-radius: 5px;
+  padding: 20px;
+  background-color: #888888;
   font-weight: bold;
   font-style: italic;
-  background-color: #888888;
-  padding: 20px;
-  color: #FFFFFF;
-  border-radius: 5px;
-  box-shadow: 0 4px 4px 0 #00000080;
 }
 
 #filter-items {
   position: fixed;
-  padding: 0 10px;
+  z-index: 0;
   top: 60px;
   left: 0;
-  text-align: left;
   width: 100%;
+  padding: 0 10px;
   background-color: #888888;
-  box-shadow: 0 4px 4px 0 #00000080;
-  z-index: 0;
+  text-align: left;
 }
 
 .show-filters-menu {
@@ -167,11 +207,10 @@ a:link {
   position: relative;
   top: 15px;
   right: 5px;
-  height: 0;
   float: right;
+  height: 0;
   font-weight: bold;
   font-style: italic;
-  color: #FFFFFF;
 }
 
 #spirits, #mixers, #liqueurs {
@@ -180,25 +219,23 @@ a:link {
 }
 
 .ingredient-category {
+  padding: 10px 0 10px 5px;
   font-size: 18px;
   font-style: italic;
-  color: #FFFFFF;
-  padding: 10px 0 10px 5px;
 }
 
 .spirit-column, .mixer-column, .liqueurs-column {
   display: inline-block;
-  vertical-align: top;
   padding-right: 15px;
+  vertical-align: top;
 }
 
 #max-missing {
   display: inline-block;
-  font-size: 16px;
   width: 240px;
-  font-style: italic;
-  color: #FFFFFF;
   padding: 10px 0 10px 5px;
+  font-size: 16px;
+  font-style: italic;
 }
 
 #max-missing-input {
@@ -211,15 +248,12 @@ a:link {
 }
 
 .filter-buttons {
-  background-color: #444444;
   border: none;
-  height: 25px;
-  border-radius: 5px;
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  font-size: 15px;
-  color: #FFFFFF;
-  font-style: italic;
   margin-bottom: 10px;
+  border-radius: 5px;
+  height: 25px;
+  font-size: 15px;
+  font-style: italic;
 }
 
 .left-filter-button {
@@ -229,8 +263,8 @@ a:link {
 #no-results {
   width: 100%;
   padding-top: 100px;
+  font-size: 1.5em;
   text-align: center;
-  font-size: 1.5em
 }
 
 /* #endregion */
@@ -249,8 +283,8 @@ a:link {
 }
 
 .cocktail-item {
-  transition: background-color 1s ease;
   display: inline-block;
+  transition: background-color 1s ease;
   width: 250px;
   padding-bottom: 15px;
   text-align: center;
@@ -281,13 +315,13 @@ a:link {
 
 .name {
   font-size: 20px;
-  color: black;
+  color: #000000;
 }
 
 .missing {
   padding: 5px 10px 0 10px;
   font-size: 15px;
-  color: #444444
+  color: #444444;
 }
 
 /* #endregion */
@@ -301,28 +335,28 @@ a:link {
 .indi-cocktail {
   flex-wrap: wrap;
   display: flex;
-  padding: 30px;
+  overflow: hidden;
   margin: auto;
   width: fit-content;
-  overflow: hidden;
+  padding: 30px;
 }
 
 #cocktail-image {
   margin: 0 auto;
-  max-width: 350px;
   border-radius: 10px;
+  max-width: 350px;
 }
 
 .full-size {
-  vertical-align: top;
-  width: 350px;
   border-radius: 10px;
+  width: 350px;
+  vertical-align: top;
 }
 
 #cocktail-details {
-  vertical-align: top;
-  padding-left: 30px;
   width: 400px;
+  padding-left: 30px;
+  vertical-align: top;
 }
 
 .item-title {
@@ -334,71 +368,67 @@ a:link {
 /* #region sign-page */
 
 .sign-page {
+  margin: auto;
   width: 360px;
   padding: 8% 0 0;
-  margin: auto;
 }
 
-.sign-page > .form {
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  background: #FFFFFF;
-  max-width: 360px;
+.form {
   margin: 0 auto 100px;
+  max-width: 360px;
   padding: 45px;
+  background-color: #ffffff;
   text-align: center;
 }
 
-.sign-page > .form input {
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  outline: 0;
-  background: #f2f2f2;
-  width: 100%;
-  border: 0;
+.form input {
   margin: 0 0 15px;
-  padding: 15px;
+  border: 0;
+  outline: 0;
   box-sizing: border-box;
+  width: 100%;
+  padding: 15px;
+  background-color: #f2f2f2;
   font-size: 14px;
 }
 
-.sign-page > .form .form-submit {
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  text-transform: uppercase;
-  outline: 0;
-  background: #e3645d;
-  width: 100%;
-  border: 0;
-  padding: 15px;
-  color: #FFFFFF;
-  font-size: 14px;
+.form .form-submit {
   -webkit-transition: all 1s ease;
   transition: all 1s ease;
+  border: 0;
+  outline: 0;
+  width: 100%;
+  padding: 15px;
+  background-color: #e3645d;
   cursor: pointer;
+  text-transform: uppercase;
+  font-size: 14px;
 }
 
-.sign-page > .form .form-submit:hover,.form .form-submit:active,.form .form-submit:focus {
-  background: #d23654;
+.form .form-submit:hover, .form .form-submit:active, .form .form-submit:focus {
+  background-color: #d23654;
 }
 
-.sign-page > .form .message {
+.form .message {
   margin: 15px 0 0;
 }
 
-.sign-page > .form .message a {
+.form .message a {
   text-decoration: none;
 }
 
-.sign-page > .form .register-form {
+.form .register-form {
   display: none;
 }
 
-.sign-page >.form .input-title {
+.form .input-title {
   margin-bottom: 4px;
   text-align: left;
 }
 
-.sign-page >.form .input-message {
-  color: #FF0000;
+.form .input-message {
   padding-left: 16px;
+  color: #ff0000;
 }
 
 /* #endregion */
@@ -406,25 +436,29 @@ a:link {
 /* #region drinks-cabinet */
 
 .drinks-cabinet-page {
-  padding: 80px 65px;
   max-width: 800px;
+  padding: 80px 65px;
 }
 
 .cabinet-button {
-  background: #888888;
   margin-bottom: 20px;
-  padding: 0px;
   border: 0;
   border-radius: 10px;
-  height: 50px;
   width: 48.3%;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  height: 50px;
+  padding: 0px;
+  background-color: #888888;
   font-size: 20px;
-  color: #FFFFFF;
 }
 
 .left-button {
   margin-right: 20px;
+}
+
+.drinks-cabinet-list {
+  padding: 25px;
+  font-size: 20px;
+  line-height: 20px;
 }
 
 .section {
@@ -433,39 +467,25 @@ a:link {
 
 .section-header {
   height: 30px;
-  vertical-align: top;
-  color: #444444;
   font-style: italic;
   text-align: center;
-}
-
-.drinks-cabinet-list {
-  padding: 25px;
-  line-height: 20px;
-  font-size: 20px;
-}
-
-.in-cabinet {
-  color: #00FF00;
-}
-
-.not-in-cabinet {
-  color: #FF00FF;
+  vertical-align: top;
+  color: #444444;
 }
 
 .drinks-cabinet-list-item:nth-of-type(odd) {
-  background: #e0e0e0;
+  background-color: #e0e0e0;
 }
 
 .star-button {
-  padding: 10px;
-  font-size: 25px;
   border: none;
+  padding: 10px;
   background: none;
+  font-size: 25px;
 }
 
 .drinks-cabinet-cocktails-page {
-  padding: 90px 65px;
+  padding: 60px 0;
 }
 
 /* #endregion */
@@ -483,27 +503,19 @@ a:link {
   }
 
   .full-size {
-    padding: 0;
     width: 100%;
     height: auto;
+    padding: 0;
   }
 
   #cocktail-details {
-    width: 275px;
     margin: auto;
+    width: 275px;
     padding: 10px 0;
   }
 }
 
 @media screen and (max-width: 729px) {
-
-  .cabinet-button {
-    width: 100%;
-  }
-
-  .left-button {
-    margin-right: 0;
-  }
 
   #spirits, #mixers, #liqueurs {
     padding-right: 0px;
@@ -511,5 +523,13 @@ a:link {
 
   .spirit-column, .mixer-column, .liqueurs-column {
     padding-right: 10px;
+  }
+
+  .cabinet-button {
+    width: 100%;
+  }
+
+  .left-button {
+    margin-right: 0;
   }
 }
