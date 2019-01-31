@@ -23,7 +23,7 @@ class DrinksCabinetCocktailsPage extends Component {
   }
 
   render() {
-
+    JSON.stringify(this.state)
     return (
       <div className='drinks-cabinet-cocktails-page'>
         <CocktailList data={this.state} noInitialRender='true' />
