@@ -31,7 +31,7 @@ class CocktailDetailsItem extends Component {
 
     return (
       <div className="indi-cocktail card">
-        <div id='cocktail-image'><img className="full-size" src={"https://s3.eu-west-2.amazonaws.com/chinchinreact/full-size/" + this.props.cocktail.pictureUrl } alt={this.props.cocktail.name} /></div>
+        <div id='cocktail-image'><img className="full-size" src={"https://raw.githubusercontent.com/joecoker/ChinChinReactApplication/master/images/full-size/" + this.props.cocktail.pictureUrl } alt={this.props.cocktail.name} /></div>
         <div id='cocktail-details'>
           <div className='top-heading'>{cocktail.name}</div><br/>
           <div className='heading'><span className='item-title'>Glass:</span><span> {cocktail.glass}</span></div>
