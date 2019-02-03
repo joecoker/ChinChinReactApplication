@@ -11,7 +11,7 @@ class CocktailListItem extends Component {
       <Link to={address}>
       <div className='cocktail-item card'>
           <div className="image-container">
-            <img className='thumbnail' src={"https://s3.eu-west-2.amazonaws.com/chinchinreact/thumbnails/" + this.props.cocktail.pictureUrl } alt={this.props.cocktail.name} />
+            <img className='thumbnail' src={"https://raw.githubusercontent.com/joecoker/ChinChinReactApplication/master/images/thumbnails/" + this.props.cocktail.pictureUrl } alt={this.props.cocktail.name} />
           </div>
             <div className='name'>{this.props.cocktail.name}</div>
             { this.props.cocktail.missingCount !== undefined &&
